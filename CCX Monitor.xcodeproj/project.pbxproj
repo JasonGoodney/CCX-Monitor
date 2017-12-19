@@ -1,0 +1,1249 @@
+// !$*UTF8*$!
+{
+	archiveVersion = 1;
+	classes = {
+	};
+	objectVersion = 48;
+	objects = {
+
+/* Begin PBXBuildFile section */
+		26011099A8FBA4811CF96E8D /* Pods_CCX_MonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */; };
+		73423CF853279AB4EF92250F /* Pods_CCX_Monitor_CCX_MonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */; };
+		7CDBA37D2E4C043AAF8C2190 /* Pods_CCX_Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */; };
+		ABC87A138FAB22D75ACBABF1 /* Pods_CCX_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF19D882FCA5F7466BD3F2C /* Pods_CCX_Widget.framework */; };
+		CC092408B566A029246B2D9E /* Pods_CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */; };
+		D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F13A1FE8210700D138BB /* LoadingViewController.swift */; };
+		D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */; };
+		D72164F01FDCFB2C00CEDD80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */; };
+		D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */; };
+		D763CFBD1FDE4D0100F5E9FC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */; };
+		D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */; };
+		D763CFCA1FDF29D400F5E9FC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */; };
+		D763CFCD1FDF29D400F5E9FC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */; };
+		D763D05A1FDF6F8800F5E9FC /* StructArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D0591FDF6F8800F5E9FC /* StructArchiver.swift */; };
+		D763D05C1FDF6F9300F5E9FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05B1FDF6F9300F5E9FC /* DataManager.swift */; };
+		D763D05F1FDF6F9900F5E9FC /* GlobalMarketTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */; };
+		D763D0601FDF6F9900F5E9FC /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05E1FDF6F9900F5E9FC /* Ticker.swift */; };
+		D79CAEDF1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */; };
+		D79CAEE61FE040A000CC7C19 /* CryptoMarketDataKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEE51FE040A000CC7C19 /* CryptoMarketDataKitTests.swift */; };
+		D79CAEE81FE040A000CC7C19 /* CryptoMarketDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D79CAED81FE040A000CC7C19 /* CryptoMarketDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
+		D79CAEEB1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */; };
+		D79CAEEC1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Embed Frameworks */ = {isa = PBXBuildFile; fileRef = D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */; settings = {ATTRIBUTES = (CodeSignOnCopy, RemoveHeadersOnCopy, ); }; };
+		D79CAEF51FE0434900CC7C19 /* CryptoMarketData.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEF41FE0434900CC7C19 /* CryptoMarketData.swift */; };
+		D79CAEF71FE04B2300CC7C19 /* CryptoMarketService.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEF61FE04B2300CC7C19 /* CryptoMarketService.swift */; };
+		D79CAEF91FE0755000CC7C19 /* CryptoMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEF81FE0755000CC7C19 /* CryptoMarketViewController.swift */; };
+		D7A1D8711FE89F5B00BED9A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */; };
+		D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */; };
+		D7C1AB191FD71B46002E2716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB181FD71B46002E2716 /* AppDelegate.swift */; };
+		D7C1AB1B1FD71B46002E2716 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB1A1FD71B46002E2716 /* ViewController.swift */; };
+		D7C1AB231FD71B46002E2716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */; };
+		D7C1AB2E1FD71B46002E2716 /* CCX_MonitorTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB2D1FD71B46002E2716 /* CCX_MonitorTests.swift */; };
+		D7C2CE1B1FD737AA00EA143D /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB3D1FD7338C002E2716 /* TickerCell.swift */; };
+		D7E5F43A1FE2BA92002172DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E5F4391FE2BA92002172DE /* GoogleService-Info.plist */; };
+		D7E5F43E1FE31C21002172DE /* FatGrayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5F43D1FE31C21002172DE /* FatGrayLabel.swift */; };
+		D7E5F4401FE42366002172DE /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */; };
+/* End PBXBuildFile section */
+
+/* Begin PBXContainerItemProxy section */
+		D79CAEE01FE040A000CC7C19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C1AB0D1FD71B46002E2716 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D79CAED51FE040A000CC7C19;
+			remoteInfo = CryptoMarketDataKit;
+		};
+		D79CAEE21FE040A000CC7C19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C1AB0D1FD71B46002E2716 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7C1AB141FD71B46002E2716;
+			remoteInfo = "CCX Monitor";
+		};
+		D79CAEE91FE040A000CC7C19 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C1AB0D1FD71B46002E2716 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D79CAED51FE040A000CC7C19;
+			remoteInfo = CryptoMarketDataKit;
+		};
+		D7C1AB2A1FD71B46002E2716 /* PBXContainerItemProxy */ = {
+			isa = PBXContainerItemProxy;
+			containerPortal = D7C1AB0D1FD71B46002E2716 /* Project object */;
+			proxyType = 1;
+			remoteGlobalIDString = D7C1AB141FD71B46002E2716;
+			remoteInfo = "CCX Monitor";
+		};
+/* End PBXContainerItemProxy section */
+
+/* Begin PBXCopyFilesBuildPhase section */
+		D79CAEF01FE040A000CC7C19 /* Embed Frameworks */ = {
+			isa = PBXCopyFilesBuildPhase;
+			buildActionMask = 2147483647;
+			dstPath = "";
+			dstSubfolderSpec = 10;
+			files = (
+				D79CAEEC1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Embed Frameworks */,
+			);
+			name = "Embed Frameworks";
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXCopyFilesBuildPhase section */
+
+/* Begin PBXFileReference section */
+		17BC5B3158CB8553719E6E0F /* Pods-CCX Monitor-CCX MonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor-CCX MonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests.release.xcconfig"; sourceTree = "<group>"; };
+		1B61C7442748261AF9AE442E /* Pods-CCX Monitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor.debug.xcconfig"; sourceTree = "<group>"; };
+		54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget.debug.xcconfig"; sourceTree = "<group>"; };
+		5B0C8579F10880EBFAA617CC /* Pods-CCX Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor.release.xcconfig"; sourceTree = "<group>"; };
+		660E8EDA959FE43D44CF2EDF /* Pods-CCX MonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX MonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Monitor_CCX_MonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		6FF19D882FCA5F7466BD3F2C /* Pods_CCX_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		72BE7EE77C07BF6D01A9ECD9 /* Pods-CryptoMarketDataKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarketDataKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit.release.xcconfig"; sourceTree = "<group>"; };
+		7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_MonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget.release.xcconfig"; sourceTree = "<group>"; };
+		A251DA5EC197A920DD6A6ABB /* Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
+		AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX MonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests.release.xcconfig"; sourceTree = "<group>"; };
+		C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarketDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D717F13A1FE8210700D138BB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
+		D72164E41FDC706700CEDD80 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
+		D72164E51FDC706700CEDD80 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
+		D72164E61FDC706700CEDD80 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
+		D72164E71FDC706700CEDD80 /* GenericView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericView.swift; sourceTree = "<group>"; };
+		D72164E81FDC706700CEDD80 /* GenericViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericViewController.swift; sourceTree = "<group>"; };
+		D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
+		D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
+		D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMarketView.swift; sourceTree = "<group>"; };
+		D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
+		D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CCX Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
+		D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
+		D763CFCC1FDF29D400F5E9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
+		D763CFCE1FDF29D400F5E9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D763D0591FDF6F8800F5E9FC /* StructArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructArchiver.swift; sourceTree = "<group>"; };
+		D763D05B1FDF6F9300F5E9FC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
+		D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMarketTicker.swift; sourceTree = "<group>"; };
+		D763D05E1FDF6F9900F5E9FC /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMarketDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79CAED81FE040A000CC7C19 /* CryptoMarketDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoMarketDataKit.h; sourceTree = "<group>"; };
+		D79CAED91FE040A000CC7C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79CAEDE1FE040A000CC7C19 /* CryptoMarketDataKitTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = CryptoMarketDataKitTests.xctest; sourceTree = BUILT_PRODUCTS_DIR; };
+		D79CAEE51FE040A000CC7C19 /* CryptoMarketDataKitTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketDataKitTests.swift; sourceTree = "<group>"; };
+		D79CAEE71FE040A000CC7C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D79CAEF41FE0434900CC7C19 /* CryptoMarketData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketData.swift; sourceTree = "<group>"; };
+		D79CAEF61FE04B2300CC7C19 /* CryptoMarketService.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketService.swift; sourceTree = "<group>"; };
+		D79CAEF81FE0755000CC7C19 /* CryptoMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketViewController.swift; sourceTree = "<group>"; };
+		D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
+		D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D7C1AB151FD71B46002E2716 /* CCX Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCX Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C1AB181FD71B46002E2716 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
+		D7C1AB1A1FD71B46002E2716 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
+		D7C1AB221FD71B46002E2716 /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/LaunchScreen.storyboard; sourceTree = "<group>"; };
+		D7C1AB241FD71B46002E2716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7C1AB291FD71B46002E2716 /* CCX MonitorTests.xctest */ = {isa = PBXFileReference; explicitFileType = wrapper.cfbundle; includeInIndex = 0; path = "CCX MonitorTests.xctest"; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7C1AB2D1FD71B46002E2716 /* CCX_MonitorTests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CCX_MonitorTests.swift; sourceTree = "<group>"; };
+		D7C1AB2F1FD71B46002E2716 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
+		D7C1AB3D1FD7338C002E2716 /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
+		D7E5F4391FE2BA92002172DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
+		D7E5F43D1FE31C21002172DE /* FatGrayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatGrayLabel.swift; sourceTree = "<group>"; };
+		D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetTableViewCell.swift; sourceTree = "<group>"; };
+		DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarketDataKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit.debug.xcconfig"; sourceTree = "<group>"; };
+/* End PBXFileReference section */
+
+/* Begin PBXFrameworksBuildPhase section */
+		D763CFC21FDF29D400F5E9FC /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */,
+				ABC87A138FAB22D75ACBABF1 /* Pods_CCX_Widget.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAED21FE040A000CC7C19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				CC092408B566A029246B2D9E /* Pods_CryptoMarketDataKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAEDB1FE040A000CC7C19 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79CAEDF1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB121FD71B46002E2716 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79CAEEB1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Frameworks */,
+				7CDBA37D2E4C043AAF8C2190 /* Pods_CCX_Monitor.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB261FD71B46002E2716 /* Frameworks */ = {
+			isa = PBXFrameworksBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				26011099A8FBA4811CF96E8D /* Pods_CCX_MonitorTests.framework in Frameworks */,
+				73423CF853279AB4EF92250F /* Pods_CCX_Monitor_CCX_MonitorTests.framework in Frameworks */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXFrameworksBuildPhase section */
+
+/* Begin PBXGroup section */
+		65B15C8EEE5905242FD28B12 /* Pods */ = {
+			isa = PBXGroup;
+			children = (
+				1B61C7442748261AF9AE442E /* Pods-CCX Monitor.debug.xcconfig */,
+				5B0C8579F10880EBFAA617CC /* Pods-CCX Monitor.release.xcconfig */,
+				660E8EDA959FE43D44CF2EDF /* Pods-CCX MonitorTests.debug.xcconfig */,
+				AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */,
+				A251DA5EC197A920DD6A6ABB /* Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig */,
+				17BC5B3158CB8553719E6E0F /* Pods-CCX Monitor-CCX MonitorTests.release.xcconfig */,
+				54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */,
+				837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */,
+				DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */,
+				72BE7EE77C07BF6D01A9ECD9 /* Pods-CryptoMarketDataKit.release.xcconfig */,
+			);
+			name = Pods;
+			sourceTree = "<group>";
+		};
+		941638F25D07EB7F8BB4D084 /* Frameworks */ = {
+			isa = PBXGroup;
+			children = (
+				CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */,
+				7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */,
+				6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */,
+				D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */,
+				6FF19D882FCA5F7466BD3F2C /* Pods_CCX_Widget.framework */,
+				C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */,
+			);
+			name = Frameworks;
+			sourceTree = "<group>";
+		};
+		D72164E31FDC706700CEDD80 /* Source */ = {
+			isa = PBXGroup;
+			children = (
+				D72164E41FDC706700CEDD80 /* ConfigurableView.swift */,
+				D72164E51FDC706700CEDD80 /* GenericCollectionViewCell.swift */,
+				D72164E61FDC706700CEDD80 /* GenericTableViewCell.swift */,
+				D72164E71FDC706700CEDD80 /* GenericView.swift */,
+				D72164E81FDC706700CEDD80 /* GenericViewController.swift */,
+			);
+			path = Source;
+			sourceTree = "<group>";
+		};
+		D763CFBE1FDECB4E00F5E9FC /* Helpers */ = {
+			isa = PBXGroup;
+			children = (
+				D763D0591FDF6F8800F5E9FC /* StructArchiver.swift */,
+				D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */,
+			);
+			path = Helpers;
+			sourceTree = "<group>";
+		};
+		D763CFC81FDF29D400F5E9FC /* CCX Widget */ = {
+			isa = PBXGroup;
+			children = (
+				D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */,
+				D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */,
+				D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */,
+				D763CFCE1FDF29D400F5E9FC /* Info.plist */,
+			);
+			path = "CCX Widget";
+			sourceTree = "<group>";
+		};
+		D79CAED71FE040A000CC7C19 /* CryptoMarketDataKit */ = {
+			isa = PBXGroup;
+			children = (
+				D79CAED81FE040A000CC7C19 /* CryptoMarketDataKit.h */,
+				D79CAED91FE040A000CC7C19 /* Info.plist */,
+				D79CAEF41FE0434900CC7C19 /* CryptoMarketData.swift */,
+				D79CAEF61FE04B2300CC7C19 /* CryptoMarketService.swift */,
+				D79CAEF81FE0755000CC7C19 /* CryptoMarketViewController.swift */,
+			);
+			path = CryptoMarketDataKit;
+			sourceTree = "<group>";
+		};
+		D79CAEE41FE040A000CC7C19 /* CryptoMarketDataKitTests */ = {
+			isa = PBXGroup;
+			children = (
+				D79CAEE51FE040A000CC7C19 /* CryptoMarketDataKitTests.swift */,
+				D79CAEE71FE040A000CC7C19 /* Info.plist */,
+			);
+			path = CryptoMarketDataKitTests;
+			sourceTree = "<group>";
+		};
+		D7C1AB0C1FD71B46002E2716 = {
+			isa = PBXGroup;
+			children = (
+				D7C1AB171FD71B46002E2716 /* CCX Monitor */,
+				D7C1AB2C1FD71B46002E2716 /* CCX MonitorTests */,
+				D763CFC81FDF29D400F5E9FC /* CCX Widget */,
+				D79CAED71FE040A000CC7C19 /* CryptoMarketDataKit */,
+				D79CAEE41FE040A000CC7C19 /* CryptoMarketDataKitTests */,
+				D7C1AB161FD71B46002E2716 /* Products */,
+				65B15C8EEE5905242FD28B12 /* Pods */,
+				941638F25D07EB7F8BB4D084 /* Frameworks */,
+			);
+			sourceTree = "<group>";
+		};
+		D7C1AB161FD71B46002E2716 /* Products */ = {
+			isa = PBXGroup;
+			children = (
+				D7C1AB151FD71B46002E2716 /* CCX Monitor.app */,
+				D7C1AB291FD71B46002E2716 /* CCX MonitorTests.xctest */,
+				D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */,
+				D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */,
+				D79CAEDE1FE040A000CC7C19 /* CryptoMarketDataKitTests.xctest */,
+			);
+			name = Products;
+			sourceTree = "<group>";
+		};
+		D7C1AB171FD71B46002E2716 /* CCX Monitor */ = {
+			isa = PBXGroup;
+			children = (
+				D763CFBE1FDECB4E00F5E9FC /* Helpers */,
+				D7FD0A0E1FDDDDE000B64076 /* Cells */,
+				D7FD0A0D1FDDDDD800B64076 /* Network */,
+				D7FD0A0C1FDDDDA400B64076 /* Models */,
+				D7FD0A0B1FDDDD9F00B64076 /* Views */,
+				D7FD0A0A1FDDDD9700B64076 /* Controllers */,
+				D7FD0A0F1FDDDE1F00B64076 /* Supporting Files */,
+				D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */,
+				D7C1AB241FD71B46002E2716 /* Info.plist */,
+				D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */,
+				D72164E31FDC706700CEDD80 /* Source */,
+			);
+			path = "CCX Monitor";
+			sourceTree = "<group>";
+		};
+		D7C1AB2C1FD71B46002E2716 /* CCX MonitorTests */ = {
+			isa = PBXGroup;
+			children = (
+				D7C1AB2D1FD71B46002E2716 /* CCX_MonitorTests.swift */,
+				D7C1AB2F1FD71B46002E2716 /* Info.plist */,
+			);
+			path = "CCX MonitorTests";
+			sourceTree = "<group>";
+		};
+		D7FD0A0A1FDDDD9700B64076 /* Controllers */ = {
+			isa = PBXGroup;
+			children = (
+				D7C1AB1A1FD71B46002E2716 /* ViewController.swift */,
+				D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */,
+				D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */,
+				D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */,
+				D717F13A1FE8210700D138BB /* LoadingViewController.swift */,
+			);
+			path = Controllers;
+			sourceTree = "<group>";
+		};
+		D7FD0A0B1FDDDD9F00B64076 /* Views */ = {
+			isa = PBXGroup;
+			children = (
+				D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */,
+				D7E5F43D1FE31C21002172DE /* FatGrayLabel.swift */,
+			);
+			path = Views;
+			sourceTree = "<group>";
+		};
+		D7FD0A0C1FDDDDA400B64076 /* Models */ = {
+			isa = PBXGroup;
+			children = (
+				D763D05E1FDF6F9900F5E9FC /* Ticker.swift */,
+				D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */,
+			);
+			path = Models;
+			sourceTree = "<group>";
+		};
+		D7FD0A0D1FDDDDD800B64076 /* Network */ = {
+			isa = PBXGroup;
+			children = (
+				D763D05B1FDF6F9300F5E9FC /* DataManager.swift */,
+			);
+			path = Network;
+			sourceTree = "<group>";
+		};
+		D7FD0A0E1FDDDDE000B64076 /* Cells */ = {
+			isa = PBXGroup;
+			children = (
+				D7C1AB3D1FD7338C002E2716 /* TickerCell.swift */,
+			);
+			path = Cells;
+			sourceTree = "<group>";
+		};
+		D7FD0A0F1FDDDE1F00B64076 /* Supporting Files */ = {
+			isa = PBXGroup;
+			children = (
+				D7E5F4391FE2BA92002172DE /* GoogleService-Info.plist */,
+				D7C1AB181FD71B46002E2716 /* AppDelegate.swift */,
+			);
+			path = "Supporting Files";
+			sourceTree = "<group>";
+		};
+/* End PBXGroup section */
+
+/* Begin PBXHeadersBuildPhase section */
+		D79CAED31FE040A000CC7C19 /* Headers */ = {
+			isa = PBXHeadersBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79CAEE81FE040A000CC7C19 /* CryptoMarketDataKit.h in Headers */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXHeadersBuildPhase section */
+
+/* Begin PBXNativeTarget section */
+		D763CFC41FDF29D400F5E9FC /* CCX Widget */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D763CFD21FDF29D400F5E9FC /* Build configuration list for PBXNativeTarget "CCX Widget" */;
+			buildPhases = (
+				F2115D6FE044C48C035AB338 /* [CP] Check Pods Manifest.lock */,
+				D763CFC11FDF29D400F5E9FC /* Sources */,
+				D763CFC21FDF29D400F5E9FC /* Frameworks */,
+				D763CFC31FDF29D400F5E9FC /* Resources */,
+				7B82729BB7B8FD229459F1E3 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = "CCX Widget";
+			productName = "CCX Widget";
+			productReference = D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */;
+			productType = "com.apple.product-type.app-extension";
+		};
+		D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79CAEED1FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKit" */;
+			buildPhases = (
+				7885E4D1B6851EFDB980B34C /* [CP] Check Pods Manifest.lock */,
+				D79CAED11FE040A000CC7C19 /* Sources */,
+				D79CAED21FE040A000CC7C19 /* Frameworks */,
+				D79CAED31FE040A000CC7C19 /* Headers */,
+				D79CAED41FE040A000CC7C19 /* Resources */,
+				BDD08A26291CAF15EEDE7133 /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+			);
+			name = CryptoMarketDataKit;
+			productName = CryptoMarketDataKit;
+			productReference = D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */;
+			productType = "com.apple.product-type.framework";
+		};
+		D79CAEDD1FE040A000CC7C19 /* CryptoMarketDataKitTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D79CAEF11FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKitTests" */;
+			buildPhases = (
+				D79CAEDA1FE040A000CC7C19 /* Sources */,
+				D79CAEDB1FE040A000CC7C19 /* Frameworks */,
+				D79CAEDC1FE040A000CC7C19 /* Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79CAEE11FE040A000CC7C19 /* PBXTargetDependency */,
+				D79CAEE31FE040A000CC7C19 /* PBXTargetDependency */,
+			);
+			name = CryptoMarketDataKitTests;
+			productName = CryptoMarketDataKitTests;
+			productReference = D79CAEDE1FE040A000CC7C19 /* CryptoMarketDataKitTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+		D7C1AB141FD71B46002E2716 /* CCX Monitor */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7C1AB321FD71B46002E2716 /* Build configuration list for PBXNativeTarget "CCX Monitor" */;
+			buildPhases = (
+				1A15EFF89F4A2E545624717A /* [CP] Check Pods Manifest.lock */,
+				D7C1AB111FD71B46002E2716 /* Sources */,
+				D7C1AB121FD71B46002E2716 /* Frameworks */,
+				D7C1AB131FD71B46002E2716 /* Resources */,
+				33BB910F0A41E447F897BB08 /* [CP] Embed Pods Frameworks */,
+				AC2CA9727451406B555857F5 /* [CP] Copy Pods Resources */,
+				D79CAEF01FE040A000CC7C19 /* Embed Frameworks */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D79CAEEA1FE040A000CC7C19 /* PBXTargetDependency */,
+			);
+			name = "CCX Monitor";
+			productName = "CCX Monitor";
+			productReference = D7C1AB151FD71B46002E2716 /* CCX Monitor.app */;
+			productType = "com.apple.product-type.application";
+		};
+		D7C1AB281FD71B46002E2716 /* CCX MonitorTests */ = {
+			isa = PBXNativeTarget;
+			buildConfigurationList = D7C1AB351FD71B46002E2716 /* Build configuration list for PBXNativeTarget "CCX MonitorTests" */;
+			buildPhases = (
+				0A388E3B65EC19A12BCA3888 /* [CP] Check Pods Manifest.lock */,
+				D7C1AB251FD71B46002E2716 /* Sources */,
+				D7C1AB261FD71B46002E2716 /* Frameworks */,
+				D7C1AB271FD71B46002E2716 /* Resources */,
+				576D66F946292DAB67F08E8E /* [CP] Embed Pods Frameworks */,
+				BC624CE188A50ECE5194486C /* [CP] Copy Pods Resources */,
+			);
+			buildRules = (
+			);
+			dependencies = (
+				D7C1AB2B1FD71B46002E2716 /* PBXTargetDependency */,
+			);
+			name = "CCX MonitorTests";
+			productName = "CCX MonitorTests";
+			productReference = D7C1AB291FD71B46002E2716 /* CCX MonitorTests.xctest */;
+			productType = "com.apple.product-type.bundle.unit-test";
+		};
+/* End PBXNativeTarget section */
+
+/* Begin PBXProject section */
+		D7C1AB0D1FD71B46002E2716 /* Project object */ = {
+			isa = PBXProject;
+			attributes = {
+				LastSwiftUpdateCheck = 0920;
+				LastUpgradeCheck = 0920;
+				ORGANIZATIONNAME = "Jason Goodney";
+				TargetAttributes = {
+					D763CFC41FDF29D400F5E9FC = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+					};
+					D79CAED51FE040A000CC7C19 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					D79CAEDD1FE040A000CC7C19 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7C1AB141FD71B46002E2716;
+					};
+					D7C1AB141FD71B46002E2716 = {
+						CreatedOnToolsVersion = 9.2;
+						LastSwiftMigration = 0920;
+						ProvisioningStyle = Automatic;
+					};
+					D7C1AB281FD71B46002E2716 = {
+						CreatedOnToolsVersion = 9.2;
+						ProvisioningStyle = Automatic;
+						TestTargetID = D7C1AB141FD71B46002E2716;
+					};
+				};
+			};
+			buildConfigurationList = D7C1AB101FD71B46002E2716 /* Build configuration list for PBXProject "CCX Monitor" */;
+			compatibilityVersion = "Xcode 8.0";
+			developmentRegion = en;
+			hasScannedForEncodings = 0;
+			knownRegions = (
+				en,
+				Base,
+			);
+			mainGroup = D7C1AB0C1FD71B46002E2716;
+			productRefGroup = D7C1AB161FD71B46002E2716 /* Products */;
+			projectDirPath = "";
+			projectRoot = "";
+			targets = (
+				D7C1AB141FD71B46002E2716 /* CCX Monitor */,
+				D7C1AB281FD71B46002E2716 /* CCX MonitorTests */,
+				D763CFC41FDF29D400F5E9FC /* CCX Widget */,
+				D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */,
+				D79CAEDD1FE040A000CC7C19 /* CryptoMarketDataKitTests */,
+			);
+		};
+/* End PBXProject section */
+
+/* Begin PBXResourcesBuildPhase section */
+		D763CFC31FDF29D400F5E9FC /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D763CFCD1FDF29D400F5E9FC /* MainInterface.storyboard in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAED41FE040A000CC7C19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAEDC1FE040A000CC7C19 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB131FD71B46002E2716 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C1AB231FD71B46002E2716 /* LaunchScreen.storyboard in Resources */,
+				D7A1D8711FE89F5B00BED9A1 /* Assets.xcassets in Resources */,
+				D7E5F43A1FE2BA92002172DE /* GoogleService-Info.plist in Resources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB271FD71B46002E2716 /* Resources */ = {
+			isa = PBXResourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXResourcesBuildPhase section */
+
+/* Begin PBXShellScriptBuildPhase section */
+		0A388E3B65EC19A12BCA3888 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCX MonitorTests-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		1A15EFF89F4A2E545624717A /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCX Monitor-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		33BB910F0A41E447F897BB08 /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/EFAutoScrollLabel/EFAutoScrollLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFAutoScrollLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		576D66F946292DAB67F08E8E /* [CP] Embed Pods Frameworks */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
+				"${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework",
+			);
+			name = "[CP] Embed Pods Frameworks";
+			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VegaScrollFlowLayout.framework",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests-frameworks.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7885E4D1B6851EFDB980B34C /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CryptoMarketDataKit-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+		7B82729BB7B8FD229459F1E3 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		AC2CA9727451406B555857F5 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BC624CE188A50ECE5194486C /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		BDD08A26291CAF15EEDE7133 /* [CP] Copy Pods Resources */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+			);
+			name = "[CP] Copy Pods Resources";
+			outputPaths = (
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit-resources.sh\"\n";
+			showEnvVarsInLog = 0;
+		};
+		F2115D6FE044C48C035AB338 /* [CP] Check Pods Manifest.lock */ = {
+			isa = PBXShellScriptBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+			);
+			inputPaths = (
+				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
+				"${PODS_ROOT}/Manifest.lock",
+			);
+			name = "[CP] Check Pods Manifest.lock";
+			outputPaths = (
+				"$(DERIVED_FILE_DIR)/Pods-CCX Widget-checkManifestLockResult.txt",
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+			shellPath = /bin/sh;
+			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
+			showEnvVarsInLog = 0;
+		};
+/* End PBXShellScriptBuildPhase section */
+
+/* Begin PBXSourcesBuildPhase section */
+		D763CFC11FDF29D400F5E9FC /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D763CFCA1FDF29D400F5E9FC /* TodayViewController.swift in Sources */,
+				D7E5F4401FE42366002172DE /* TodayWidgetTableViewCell.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAED11FE040A000CC7C19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79CAEF91FE0755000CC7C19 /* CryptoMarketViewController.swift in Sources */,
+				D79CAEF71FE04B2300CC7C19 /* CryptoMarketService.swift in Sources */,
+				D79CAEF51FE0434900CC7C19 /* CryptoMarketData.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D79CAEDA1FE040A000CC7C19 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D79CAEE61FE040A000CC7C19 /* CryptoMarketDataKitTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB111FD71B46002E2716 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D763D05A1FDF6F8800F5E9FC /* StructArchiver.swift in Sources */,
+				D7C1AB1B1FD71B46002E2716 /* ViewController.swift in Sources */,
+				D763D05F1FDF6F9900F5E9FC /* GlobalMarketTicker.swift in Sources */,
+				D7E5F43E1FE31C21002172DE /* FatGrayLabel.swift in Sources */,
+				D763CFBD1FDE4D0100F5E9FC /* AddViewController.swift in Sources */,
+				D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */,
+				D72164F01FDCFB2C00CEDD80 /* DetailViewController.swift in Sources */,
+				D763D0601FDF6F9900F5E9FC /* Ticker.swift in Sources */,
+				D7C1AB191FD71B46002E2716 /* AppDelegate.swift in Sources */,
+				D7C2CE1B1FD737AA00EA143D /* TickerCell.swift in Sources */,
+				D763D05C1FDF6F9300F5E9FC /* DataManager.swift in Sources */,
+				D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */,
+				D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */,
+				D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+		D7C1AB251FD71B46002E2716 /* Sources */ = {
+			isa = PBXSourcesBuildPhase;
+			buildActionMask = 2147483647;
+			files = (
+				D7C1AB2E1FD71B46002E2716 /* CCX_MonitorTests.swift in Sources */,
+			);
+			runOnlyForDeploymentPostprocessing = 0;
+		};
+/* End PBXSourcesBuildPhase section */
+
+/* Begin PBXTargetDependency section */
+		D79CAEE11FE040A000CC7C19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */;
+			targetProxy = D79CAEE01FE040A000CC7C19 /* PBXContainerItemProxy */;
+		};
+		D79CAEE31FE040A000CC7C19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7C1AB141FD71B46002E2716 /* CCX Monitor */;
+			targetProxy = D79CAEE21FE040A000CC7C19 /* PBXContainerItemProxy */;
+		};
+		D79CAEEA1FE040A000CC7C19 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */;
+			targetProxy = D79CAEE91FE040A000CC7C19 /* PBXContainerItemProxy */;
+		};
+		D7C1AB2B1FD71B46002E2716 /* PBXTargetDependency */ = {
+			isa = PBXTargetDependency;
+			target = D7C1AB141FD71B46002E2716 /* CCX Monitor */;
+			targetProxy = D7C1AB2A1FD71B46002E2716 /* PBXContainerItemProxy */;
+		};
+/* End PBXTargetDependency section */
+
+/* Begin PBXVariantGroup section */
+		D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D763CFCC1FDF29D400F5E9FC /* Base */,
+			);
+			name = MainInterface.storyboard;
+			sourceTree = "<group>";
+		};
+		D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */ = {
+			isa = PBXVariantGroup;
+			children = (
+				D7C1AB221FD71B46002E2716 /* Base */,
+			);
+			name = LaunchScreen.storyboard;
+			sourceTree = "<group>";
+		};
+/* End PBXVariantGroup section */
+
+/* Begin XCBuildConfiguration section */
+		D763CFD31FDF29D400F5E9FC /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = "CCX Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor.CCX-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D763CFD41FDF29D400F5E9FC /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */;
+			buildSettings = {
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = "CCX Widget/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor.CCX-Widget";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D79CAEEE1FE040A000CC7C19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CryptoMarketDataKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasongoodney.CryptoMarketDataKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Debug;
+		};
+		D79CAEEF1FE040A000CC7C19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 72BE7EE77C07BF6D01A9ECD9 /* Pods-CryptoMarketDataKit.release.xcconfig */;
+			buildSettings = {
+				APPLICATION_EXTENSION_API_ONLY = YES;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "";
+				CODE_SIGN_STYLE = Automatic;
+				CURRENT_PROJECT_VERSION = 1;
+				DEFINES_MODULE = YES;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				DYLIB_COMPATIBILITY_VERSION = 1;
+				DYLIB_CURRENT_VERSION = 1;
+				DYLIB_INSTALL_NAME_BASE = "@rpath";
+				INFOPLIST_FILE = CryptoMarketDataKit/Info.plist;
+				INSTALL_PATH = "$(LOCAL_LIBRARY_DIR)/Frameworks";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasongoodney.CryptoMarketDataKit;
+				PRODUCT_NAME = "$(TARGET_NAME:c99extidentifier)";
+				SKIP_INSTALL = YES;
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				VERSIONING_SYSTEM = "apple-generic";
+				VERSION_INFO_PREFIX = "";
+			};
+			name = Release;
+		};
+		D79CAEF21FE040A000CC7C19 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = CryptoMarketDataKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasongoodney.CryptoMarketDataKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCX Monitor.app/CCX Monitor";
+			};
+			name = Debug;
+		};
+		D79CAEF31FE040A000CC7C19 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = CryptoMarketDataKitTests/Info.plist;
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = com.jasongoodney.CryptoMarketDataKitTests;
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCX Monitor.app/CCX Monitor";
+			};
+			name = Release;
+		};
+		D7C1AB301FD71B46002E2716 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = dwarf;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				ENABLE_TESTABILITY = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_DYNAMIC_NO_PIC = NO;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_OPTIMIZATION_LEVEL = 0;
+				GCC_PREPROCESSOR_DEFINITIONS = (
+					"DEBUG=1",
+					"$(inherited)",
+				);
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = YES;
+				ONLY_ACTIVE_ARCH = YES;
+				SDKROOT = iphoneos;
+				SWIFT_ACTIVE_COMPILATION_CONDITIONS = DEBUG;
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+			};
+			name = Debug;
+		};
+		D7C1AB311FD71B46002E2716 /* Release */ = {
+			isa = XCBuildConfiguration;
+			buildSettings = {
+				ALWAYS_SEARCH_USER_PATHS = NO;
+				CLANG_ANALYZER_NONNULL = YES;
+				CLANG_ANALYZER_NUMBER_OBJECT_CONVERSION = YES_AGGRESSIVE;
+				CLANG_CXX_LANGUAGE_STANDARD = "gnu++14";
+				CLANG_CXX_LIBRARY = "libc++";
+				CLANG_ENABLE_MODULES = YES;
+				CLANG_ENABLE_OBJC_ARC = YES;
+				CLANG_WARN_BLOCK_CAPTURE_AUTORELEASING = YES;
+				CLANG_WARN_BOOL_CONVERSION = YES;
+				CLANG_WARN_COMMA = YES;
+				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
+				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
+				CLANG_WARN_EMPTY_BODY = YES;
+				CLANG_WARN_ENUM_CONVERSION = YES;
+				CLANG_WARN_INFINITE_RECURSION = YES;
+				CLANG_WARN_INT_CONVERSION = YES;
+				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
+				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
+				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
+				CLANG_WARN_STRICT_PROTOTYPES = YES;
+				CLANG_WARN_SUSPICIOUS_MOVE = YES;
+				CLANG_WARN_UNGUARDED_AVAILABILITY = YES_AGGRESSIVE;
+				CLANG_WARN_UNREACHABLE_CODE = YES;
+				CLANG_WARN__DUPLICATE_METHOD_MATCH = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				COPY_PHASE_STRIP = NO;
+				DEBUG_INFORMATION_FORMAT = "dwarf-with-dsym";
+				ENABLE_NS_ASSERTIONS = NO;
+				ENABLE_STRICT_OBJC_MSGSEND = YES;
+				GCC_C_LANGUAGE_STANDARD = gnu11;
+				GCC_NO_COMMON_BLOCKS = YES;
+				GCC_WARN_64_TO_32_BIT_CONVERSION = YES;
+				GCC_WARN_ABOUT_RETURN_TYPE = YES_ERROR;
+				GCC_WARN_UNDECLARED_SELECTOR = YES;
+				GCC_WARN_UNINITIALIZED_AUTOS = YES_AGGRESSIVE;
+				GCC_WARN_UNUSED_FUNCTION = YES;
+				GCC_WARN_UNUSED_VARIABLE = YES;
+				IPHONEOS_DEPLOYMENT_TARGET = 11.2;
+				MTL_ENABLE_DEBUG_INFO = NO;
+				SDKROOT = iphoneos;
+				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				VALIDATE_PRODUCT = YES;
+			};
+			name = Release;
+		};
+		D7C1AB331FD71B46002E2716 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 1B61C7442748261AF9AE442E /* Pods-CCX Monitor.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "CCX Monitor/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Debug;
+		};
+		D7C1AB341FD71B46002E2716 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 5B0C8579F10880EBFAA617CC /* Pods-CCX Monitor.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
+				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				HEADER_SEARCH_PATHS = "$(inherited)";
+				INFOPLIST_FILE = "CCX Monitor/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_OBJC_BRIDGING_HEADER = "";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+			};
+			name = Release;
+		};
+		D7C1AB361FD71B46002E2716 /* Debug */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = 660E8EDA959FE43D44CF2EDF /* Pods-CCX MonitorTests.debug.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = "CCX MonitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCX Monitor.app/CCX Monitor";
+			};
+			name = Debug;
+		};
+		D7C1AB371FD71B46002E2716 /* Release */ = {
+			isa = XCBuildConfiguration;
+			baseConfigurationReference = AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */;
+			buildSettings = {
+				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
+				BUNDLE_LOADER = "$(TEST_HOST)";
+				CODE_SIGN_STYLE = Automatic;
+				DEVELOPMENT_TEAM = K2R548H5LT;
+				INFOPLIST_FILE = "CCX MonitorTests/Info.plist";
+				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-MonitorTests";
+				PRODUCT_NAME = "$(TARGET_NAME)";
+				SWIFT_VERSION = 4.0;
+				TARGETED_DEVICE_FAMILY = "1,2";
+				TEST_HOST = "$(BUILT_PRODUCTS_DIR)/CCX Monitor.app/CCX Monitor";
+			};
+			name = Release;
+		};
+/* End XCBuildConfiguration section */
+
+/* Begin XCConfigurationList section */
+		D763CFD21FDF29D400F5E9FC /* Build configuration list for PBXNativeTarget "CCX Widget" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D763CFD31FDF29D400F5E9FC /* Debug */,
+				D763CFD41FDF29D400F5E9FC /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79CAEED1FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKit" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79CAEEE1FE040A000CC7C19 /* Debug */,
+				D79CAEEF1FE040A000CC7C19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D79CAEF11FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKitTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D79CAEF21FE040A000CC7C19 /* Debug */,
+				D79CAEF31FE040A000CC7C19 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7C1AB101FD71B46002E2716 /* Build configuration list for PBXProject "CCX Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C1AB301FD71B46002E2716 /* Debug */,
+				D7C1AB311FD71B46002E2716 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7C1AB321FD71B46002E2716 /* Build configuration list for PBXNativeTarget "CCX Monitor" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C1AB331FD71B46002E2716 /* Debug */,
+				D7C1AB341FD71B46002E2716 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+		D7C1AB351FD71B46002E2716 /* Build configuration list for PBXNativeTarget "CCX MonitorTests" */ = {
+			isa = XCConfigurationList;
+			buildConfigurations = (
+				D7C1AB361FD71B46002E2716 /* Debug */,
+				D7C1AB371FD71B46002E2716 /* Release */,
+			);
+			defaultConfigurationIsVisible = 0;
+			defaultConfigurationName = Release;
+		};
+/* End XCConfigurationList section */
+	};
+	rootObject = D7C1AB0D1FD71B46002E2716 /* Project object */;
+}
