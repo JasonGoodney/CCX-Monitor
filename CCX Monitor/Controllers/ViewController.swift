@@ -59,8 +59,6 @@ class ViewController: CryptoMarketViewController {
             self.refreshDataFromUserDefaults()
         }
         
-        
-        
         setupTableView()
         setupNavBar()
         setupForceTouch()
@@ -294,7 +292,13 @@ class ViewController: CryptoMarketViewController {
             self.globalMarketTicker = global
             
             DispatchQueue.main.async {
-                self.globalMarketView = GlobalMarketView(self.globalMarketTicker.totalMarketCapUsd, self.globalMarketTicker.total24hVolumeUsd, self.globalMarketTicker.activeCurrencies, self.globalMarketTicker.activeAssets, self.globalMarketTicker.bitcoinPercentageOfMarketCap)
+                self.globalMarketView = GlobalMarketView(
+                    self.globalMarketTicker.totalMarketCapUsd,
+                    self.globalMarketTicker.total24hVolumeUsd,
+                    self.globalMarketTicker.activeCurrencies,
+                    self.globalMarketTicker.activeAssets,
+                    self.globalMarketTicker.bitcoinPercentageOfMarketCap
+                )
                 
                 completion()
             }
@@ -393,16 +397,21 @@ extension ViewController: BannerViewStateDelegate {
 extension ViewController: UIViewControllerPreviewingDelegate {
     func previewingContext(_ previewingContext: UIViewControllerPreviewing, viewControllerForLocation location: CGPoint) -> UIViewController? {
         
-        guard let indexPath = tableView.indexPathForRow(at: location),
-            let data = self.cryptoMarketData,
-            let cell = tableView.cellForRow(at: indexPath) else { return nil }
+        let cellPoint = tableView.convert(location, from: self.view)
+        
+        if let path = tableView.indexPathForRow(at: cellPoint) {
+            let cell = tableView.cellForRow(at: path) as! TickerCell
             
-            //This will show the cell clearly and blur the rest of the screen for our peek.
-            let detailViewController = DetailViewController(data: data[indexPath.row])
-            //detailViewController.data = data[indexPath.row - 1]
-            previewingContext.sourceRect = cell.frame //tableView.rectForRow(at: indexPath)
+            guard let data = self.cryptoMarketData else { return nil }
+            
+            let detailViewController = DetailViewController(data: data[path.row])
+            
+            previewingContext.sourceRect = self.view.convert(cell.frame, from: tableView)
             
             return detailViewController
+        }
+            
+        return nil
         
     }
     

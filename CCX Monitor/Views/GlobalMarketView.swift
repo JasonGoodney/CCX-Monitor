@@ -77,8 +77,7 @@ class GlobalMarketView: UIView {
         
         fatalError("init(coder:) has not been implemented")
     }
-    
-    
+
     
     fileprivate func addViews() {
         addSubview(autoScrollLabel)
