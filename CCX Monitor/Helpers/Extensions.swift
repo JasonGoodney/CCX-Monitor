@@ -9,6 +9,71 @@
 import UIKit
 import Foundation
 
+
+protocol ButtonAnimations {
+    func pulsate(layer: CALayer)
+    func animationScaleEffect(view:UIView,animationTime:Float)
+}
+
+extension ButtonAnimations {
+    func pulsate(layer: CALayer) {
+        
+        let pulse = CASpringAnimation(keyPath: "transform.scale")
+        pulse.duration = 0.6
+        pulse.fromValue = 0.75
+        pulse.toValue = 1.0
+        pulse.autoreverses = true
+        pulse.repeatCount = 0
+        pulse.initialVelocity = 0.5
+        pulse.damping = 1.0
+        
+        layer.add(pulse, forKey: "pulse")
+    }
+    
+    func animationScaleEffect(view:UIView,animationTime:Float)
+    {
+        UIView.animate(withDuration: TimeInterval(animationTime), animations: {
+            
+            view.transform = CGAffineTransform(scaleX: 0.6, y: 0.6)
+            
+        },completion:{completion in
+            UIView.animate(withDuration: TimeInterval(animationTime), animations: { () -> Void in
+                
+                view.transform = CGAffineTransform(scaleX: 1, y: 1)
+            })
+        })
+        
+    }
+}
+
+extension UIButton: ButtonAnimations {}
+extension UIBarButtonItem: ButtonAnimations {}
+
+extension UIImage{
+    
+    class func imageFromSystemBarButton(_ systemItem: UIBarButtonSystemItem, renderingMode:UIImageRenderingMode = .automatic)-> UIImage {
+        
+        let tempItem = UIBarButtonItem(barButtonSystemItem: systemItem, target: nil, action: nil)
+        
+        // add to toolbar and render it
+        UIToolbar().setItems([tempItem], animated: false)
+        
+        // got image from real uibutton
+        let itemView = tempItem.value(forKey: "view") as! UIView
+        
+        for view in itemView.subviews {
+            if view is UIButton {
+                let button = view as! UIButton
+                let image = button.imageView!.image!
+                image.withRenderingMode(renderingMode)
+                return image
+            }
+        }
+        
+        return UIImage()
+    }
+}
+
 extension UIColor {
     static var xMasRed: UIColor {
         return UIColor(red:0.90, green:0.22, blue:0.21, alpha:1.0)

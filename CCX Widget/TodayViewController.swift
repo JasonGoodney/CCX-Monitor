@@ -14,6 +14,7 @@ class TodayViewController: CryptoMarketViewController, NCWidgetProviding {
     
     let baseCoinMarketCapApi = "https://api.coinmarketcap.com/v1/ticker/"
     let defaultsKey = "tickers"
+    var widgetData = [CryptoMarketData]()
     
     lazy var tableView: UITableView = {
         let view = UITableView()
@@ -40,16 +41,19 @@ class TodayViewController: CryptoMarketViewController, NCWidgetProviding {
     }
     
     func refreshUserDefaultsData() {
-        guard let data = self.cryptoMarketData else { return }
-        for i in 0..<5 {
-            getSingleCryptocurrencyData(at: baseCoinMarketCapApi + data[i].id, completion: { (error) in
-                if error == nil {
-                    guard let data = self.singleCryptocurrencyData else { return }
-                    self.cryptoMarketData![i] = data
-                }
-            })
-        }
-        CryptoMarketService.shared.saveArray(data, forKey: defaultsKey)
+//        guard let data = self.cryptoMarketData else { return }
+//        for i in 0..<2 {
+//            getSingleCryptocurrencyData(at: baseCoinMarketCapApi + data[i].id, completion: { (error) in
+//                if error == nil {
+//                    guard let data = self.singleCryptocurrencyData else { return }
+//                    self.cryptoMarketData![i] = data
+//                }
+//            })
+//        }
+//        CryptoMarketService.shared.saveArray(data, forKey: defaultsKey)
+        
+        loadDataFromUserDefaults()
+        widgetData = self.cryptoMarketData!
     }
     
     func widgetPerformUpdate(completionHandler: (@escaping (NCUpdateResult) -> Void)) {
@@ -61,6 +65,8 @@ class TodayViewController: CryptoMarketViewController, NCWidgetProviding {
 //                completionHandler(.NoData)
 //            }
 //        })
+        
+        refreshUserDefaultsData()
         completionHandler(NCUpdateResult.newData)
    }
 //
@@ -73,16 +79,16 @@ class TodayViewController: CryptoMarketViewController, NCWidgetProviding {
 extension TodayViewController: UITableViewDataSource, UITableViewDelegate {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rowCount = self.cryptoMarketData?.count else { return 0 }
-        return rowCount
+        return 2
     }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TodayWidgetTableViewCell.reuseIdentifier, for: indexPath) as! TodayWidgetTableViewCell
         
-        if let data = self.cryptoMarketData {
-            let item = data[indexPath.row]
+       // if let data = self.cryptoMarketData {
+            let item = widgetData[indexPath.row]
             cell.configureWithCell(item)
-        }
+        //}
         
         return cell
     }

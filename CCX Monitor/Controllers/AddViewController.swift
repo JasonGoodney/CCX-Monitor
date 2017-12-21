@@ -27,6 +27,7 @@ class AddViewController: CryptoMarketViewController {
         let view = UITableView()
         view.dataSource = self
         view.delegate = self
+        view.contentInset.bottom = 0
         return view
     }()
     

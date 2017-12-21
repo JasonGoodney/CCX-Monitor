@@ -21,6 +21,7 @@ class EditListViewController: CryptoMarketViewController {
         view.delegate = self
         view.dataSource = self
         view.isEditing = true
+        view.contentInset.bottom = 0
         return view
     }()
     
@@ -62,19 +63,24 @@ class EditListViewController: CryptoMarketViewController {
     }
     
     func setupNavBar() {
-        let doneButton = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler(_:)))
-        let addButton = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHandler(_:)))
+
+        let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler(_:)))
+        
+        let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHandler(_:)))
         let flexibleSpace = UIBarButtonItem(barButtonSystemItem: .flexibleSpace, target: self, action: nil)
         
         navigationItem.title = "Cryptocurrencies"
         
         var toolbarItems = [UIBarButtonItem]()
-        toolbarItems.append(addButton)
+        toolbarItems.append(addButtonItem)
         toolbarItems.append(flexibleSpace)
-        toolbarItems.append(doneButton)
+        toolbarItems.append(doneButtonItem)
         
-        self.setToolbarItems([addButton, flexibleSpace, doneButton], animated: true)
-        self.navigationController?.isToolbarHidden = false
+        //self.setToolbarItems([addButtonItem, flexibleSpace, doneButtonItem], animated: true)
+        //self.navigationController?.isToolbarHidden = false
+        
+        navigationItem.leftBarButtonItem = addButtonItem
+        navigationItem.rightBarButtonItem = doneButtonItem
         
     }
 
@@ -101,12 +107,15 @@ extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
         return rowCount
     }
     
-    
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        return appDelegate.bannerView
+    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+        let headerView = UIView()
+        headerView.backgroundColor = .white
+        headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
+        headerView.addSubview(appDelegate.bannerView)
+        return headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
         switch appDelegate.bannerViewState {
         case .present:
             return appDelegate.bannerView.frame.height

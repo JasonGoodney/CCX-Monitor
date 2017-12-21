@@ -14,7 +14,7 @@ target 'CCX Monitor' do
   # Pods for CCX Monitor
   shared_pods
   pod 'EFAutoScrollLabel'
-  
+  pod 'Eureka'
   
   target 'CCX MonitorTests' do
     inherit! :search_paths
@@ -28,8 +28,9 @@ target 'CryptoMarketDataKit' do
     
 end
 
-target 'CCX Widget' do
-    use_frameworks!
-    
-    shared_pods
-end
+#target 'CCX Widget' do
+#    use_frameworks!
+#    
+#    shared_pods
+#end
+

@@ -10,7 +10,6 @@
 		26011099A8FBA4811CF96E8D /* Pods_CCX_MonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */; };
 		73423CF853279AB4EF92250F /* Pods_CCX_Monitor_CCX_MonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */; };
 		7CDBA37D2E4C043AAF8C2190 /* Pods_CCX_Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */; };
-		ABC87A138FAB22D75ACBABF1 /* Pods_CCX_Widget.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6FF19D882FCA5F7466BD3F2C /* Pods_CCX_Widget.framework */; };
 		CC092408B566A029246B2D9E /* Pods_CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */; };
 		D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F13A1FE8210700D138BB /* LoadingViewController.swift */; };
 		D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */; };
@@ -34,6 +33,7 @@
 		D79CAEF91FE0755000CC7C19 /* CryptoMarketViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEF81FE0755000CC7C19 /* CryptoMarketViewController.swift */; };
 		D7A1D8711FE89F5B00BED9A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */; };
 		D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */; };
+		D7A1D8A71FEAC71400BED9A1 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */; };
 		D7C1AB191FD71B46002E2716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB181FD71B46002E2716 /* AppDelegate.swift */; };
 		D7C1AB1B1FD71B46002E2716 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB1A1FD71B46002E2716 /* ViewController.swift */; };
 		D7C1AB231FD71B46002E2716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */; };
@@ -92,14 +92,12 @@
 /* Begin PBXFileReference section */
 		17BC5B3158CB8553719E6E0F /* Pods-CCX Monitor-CCX MonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor-CCX MonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 		1B61C7442748261AF9AE442E /* Pods-CCX Monitor.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor.debug.xcconfig"; sourceTree = "<group>"; };
-		54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Widget.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget.debug.xcconfig"; sourceTree = "<group>"; };
 		5B0C8579F10880EBFAA617CC /* Pods-CCX Monitor.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor.release.xcconfig"; sourceTree = "<group>"; };
 		660E8EDA959FE43D44CF2EDF /* Pods-CCX MonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX MonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Monitor_CCX_MonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		6FF19D882FCA5F7466BD3F2C /* Pods_CCX_Widget.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Widget.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		72BE7EE77C07BF6D01A9ECD9 /* Pods-CryptoMarketDataKit.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarketDataKit.release.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit.release.xcconfig"; sourceTree = "<group>"; };
 		7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_MonitorTests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Widget.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget.release.xcconfig"; sourceTree = "<group>"; };
 		A251DA5EC197A920DD6A6ABB /* Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig"; sourceTree = "<group>"; };
 		AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX MonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 		C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarketDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -134,6 +132,7 @@
 		D79CAEF81FE0755000CC7C19 /* CryptoMarketViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = CryptoMarketViewController.swift; sourceTree = "<group>"; };
 		D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
+		D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
 		D7C1AB151FD71B46002E2716 /* CCX Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCX Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C1AB181FD71B46002E2716 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7C1AB1A1FD71B46002E2716 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -155,7 +154,6 @@
 			buildActionMask = 2147483647;
 			files = (
 				D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */,
-				ABC87A138FAB22D75ACBABF1 /* Pods_CCX_Widget.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -205,8 +203,6 @@
 				AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */,
 				A251DA5EC197A920DD6A6ABB /* Pods-CCX Monitor-CCX MonitorTests.debug.xcconfig */,
 				17BC5B3158CB8553719E6E0F /* Pods-CCX Monitor-CCX MonitorTests.release.xcconfig */,
-				54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */,
-				837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */,
 				DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */,
 				72BE7EE77C07BF6D01A9ECD9 /* Pods-CryptoMarketDataKit.release.xcconfig */,
 			);
@@ -340,6 +336,7 @@
 				D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */,
 				D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */,
 				D717F13A1FE8210700D138BB /* LoadingViewController.swift */,
+				D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -405,11 +402,9 @@
 			isa = PBXNativeTarget;
 			buildConfigurationList = D763CFD21FDF29D400F5E9FC /* Build configuration list for PBXNativeTarget "CCX Widget" */;
 			buildPhases = (
-				F2115D6FE044C48C035AB338 /* [CP] Check Pods Manifest.lock */,
 				D763CFC11FDF29D400F5E9FC /* Sources */,
 				D763CFC21FDF29D400F5E9FC /* Frameworks */,
 				D763CFC31FDF29D400F5E9FC /* Resources */,
-				7B82729BB7B8FD229459F1E3 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -647,6 +642,7 @@
 			inputPaths = (
 				"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-frameworks.sh",
 				"${BUILT_PRODUCTS_DIR}/EFAutoScrollLabel/EFAutoScrollLabel.framework",
+				"${BUILT_PRODUCTS_DIR}/Eureka/Eureka.framework",
 				"${BUILT_PRODUCTS_DIR}/GoogleToolboxForMac/GoogleToolboxForMac.framework",
 				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
 				"${BUILT_PRODUCTS_DIR}/nanopb/nanopb.framework",
@@ -654,6 +650,7 @@
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/EFAutoScrollLabel.framework",
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/Eureka.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/GoogleToolboxForMac.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/nanopb.framework",
@@ -701,21 +698,6 @@
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
-		7B82729BB7B8FD229459F1E3 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Widget/Pods-CCX Widget-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		AC2CA9727451406B555857F5 /* [CP] Copy Pods Resources */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -759,24 +741,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		F2115D6FE044C48C035AB338 /* [CP] Check Pods Manifest.lock */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${PODS_PODFILE_DIR_PATH}/Podfile.lock",
-				"${PODS_ROOT}/Manifest.lock",
-			);
-			name = "[CP] Check Pods Manifest.lock";
-			outputPaths = (
-				"$(DERIVED_FILE_DIR)/Pods-CCX Widget-checkManifestLockResult.txt",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -827,6 +791,7 @@
 				D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */,
 				D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */,
 				D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */,
+				D7A1D8A71FEAC71400BED9A1 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
 		};
@@ -885,7 +850,6 @@
 /* Begin XCBuildConfiguration section */
 		D763CFD31FDF29D400F5E9FC /* Debug */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 54268D12B6B3DC0D08CC96B1 /* Pods-CCX Widget.debug.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2R548H5LT;
@@ -901,7 +865,6 @@
 		};
 		D763CFD41FDF29D400F5E9FC /* Release */ = {
 			isa = XCBuildConfiguration;
-			baseConfigurationReference = 837AC4E4774EA7B022CD1F4F /* Pods-CCX Widget.release.xcconfig */;
 			buildSettings = {
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2R548H5LT;

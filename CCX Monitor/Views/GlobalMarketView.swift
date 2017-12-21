@@ -43,10 +43,11 @@ class GlobalMarketView: UIView {
         let button = UIButton()
         button.addTarget(self, action: #selector(EditListDelegate.launchEditList(_:)), for: .touchUpInside)
         button.setImage(#imageLiteral(resourceName: "list").withRenderingMode(.alwaysTemplate), for: .normal)
-        button.tintColor = UIColor.white
+        //button.tintColor = UIColor.white
+        button.tintColor = UIColor.init(red: 0, green: 0.47, blue: 1, alpha: 1)
         button.layer.cornerRadius = 5
         button.clipsToBounds = true
-        button.backgroundColor = .black
+        //button.backgroundColor = .black
         return button
     }()
     

@@ -23,6 +23,7 @@ class ViewController: CryptoMarketViewController {
         view.dataSource = self
         view.delegate = self
         view.rowHeight = 88
+        view.tableHeaderView?.backgroundColor = .white
         view.register(TickerCell.self, forCellReuseIdentifier: TickerCell.reuseIdentifier())
         return view
     }()
@@ -76,9 +77,10 @@ class ViewController: CryptoMarketViewController {
             }
         }
        
-        tableView.reloadData()
+        //tableView.reloadData()
         
         runDataRefreshTimer()
+        
         
         
     }
@@ -96,7 +98,7 @@ class ViewController: CryptoMarketViewController {
         
         
         if isLaunch == false {
-            print("viewwillappear")
+            //print("viewwillappear")
             loadDataFromUserDefaults()
             refreshDataFromUserDefaults()
             //self.tableView.reloadData()
@@ -104,13 +106,14 @@ class ViewController: CryptoMarketViewController {
             isLaunch = !isLaunch
         }
 
+        tableView.reloadData()
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        
+        //print("viewdidappear")
         if isLaunch == false {
-            print("viewdidappear")
+            
             loadDataFromUserDefaults()
             refreshDataFromUserDefaults()
             //self.tableView.reloadData()
@@ -214,6 +217,8 @@ class ViewController: CryptoMarketViewController {
         if #available(iOS 11.0, *) {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
+        
+        print(infoButton.tintColor.description)
     }
 
     fileprivate func setupTableView() {
@@ -267,7 +272,10 @@ class ViewController: CryptoMarketViewController {
         alertController.addAction(removeAdsAction)
         alertController.addAction(cancelAction)
         
-        present(alertController, animated: true)
+        let infoViewController = InformationViewController()
+        infoViewController.navigationController?.navigationBar.prefersLargeTitles = false
+        let navController = UINavigationController(rootViewController: infoViewController)
+        present(navController, animated: true)
     }
     
     @objc func openSafari(with address: String = "https://coinmarketcap.com", _ sender: Any) {
@@ -319,12 +327,14 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
     }
 
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        
-        return appDelegate.bannerView
+        let headerView = UIView()
+        headerView.backgroundColor = .white
+        headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
+        headerView.addSubview(appDelegate.bannerView)
+        return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        //print(appDelegate.bannerViewState)
         switch appDelegate.bannerViewState {
         case .present:
             return appDelegate.bannerView.frame.height
@@ -360,6 +370,7 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
 extension ViewController: EditListDelegate {
     func launchEditList(_ sender: UIButton) {
+        sender.pulsate(layer: sender.layer)
         let editListViewController = EditListViewController()
         editListViewController.delegate = self
         let navViewController = UINavigationController(rootViewController: editListViewController)
@@ -374,7 +385,6 @@ extension ViewController: EditListDelegate {
 extension ViewController: RefreshDelegate {
     func refreshTableView() {
         self.loadDataFromUserDefaults()
-        //self.refreshDataFromUserDefaults()
         DispatchQueue.main.async {
             self.tableView.reloadData()
         }
