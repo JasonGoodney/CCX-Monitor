@@ -50,16 +50,17 @@ class AddViewController: CryptoMarketViewController {
         super.viewWillAppear(animated)
         
         
-        DispatchQueue.main.async { [unowned self] in
-            self.navigationItem.searchController?.searchBar.becomeFirstResponder()
-        }
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
         
-        searchController.isActive = true
+        DispatchQueue.main.async {
+            self.searchController.isActive = true
+            self.searchController.searchBar.becomeFirstResponder()
+        }
+        
+        
     }
 
     override func didReceiveMemoryWarning() {
@@ -106,6 +107,7 @@ class AddViewController: CryptoMarketViewController {
         searchController.definesPresentationContext = true
         searchController.searchBar.delegate = self
         searchController.searchBar.showsCancelButton = true
+        searchController.delegate = self
     }
     
     fileprivate func setupNavBar() {
@@ -147,9 +149,7 @@ class AddViewController: CryptoMarketViewController {
 
 extension AddViewController: UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating {
     func searchBarCancelButtonClicked(_ searchBar: UISearchBar) {
-        if searchBar.text == "" {
-            self.dismiss(animated: true, completion: nil)
-        }
+        self.dismiss(animated: true, completion: nil)
     }
 
     func updateSearchResults(for searchController: UISearchController) {
@@ -158,7 +158,9 @@ extension AddViewController: UISearchControllerDelegate, UISearchBarDelegate, UI
     }
     
     func didPresentSearchController(_ searchController: UISearchController) {
-        searchController.searchBar.becomeFirstResponder()
+        UIView.animate(withDuration: 0.1, animations: { () -> Void in }) { (completed) -> Void in
+            searchController.searchBar.becomeFirstResponder()
+        }
     }
 }
 
@@ -208,8 +210,16 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         CryptoMarketService.shared.saveArray(data, forKey: DataManager.defaultsKey)
         
         self.searchController.isActive = false
+        
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         self.dismiss(animated: true) {
-            print("controller dismissing")
+            
+            
+//            if (self.parent?.isKind(of: ViewController.self))! {
+//                let viewController = ViewController()
+//                viewController.refreshTableView()
+//            }
         }
     }
 }
+

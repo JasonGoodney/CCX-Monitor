@@ -12,8 +12,12 @@ import SafariServices
 import CryptoMarketDataKit
 import GoogleMobileAds
 
-protocol RefreshDelegate: class {
-    func refreshTableView()
+@objc protocol RefreshDelegate: class {
+    func refreshTableView(notification: Notification)
+}
+
+enum Refresh: String {
+    case tableView
 }
 
 class ViewController: CryptoMarketViewController {
@@ -54,7 +58,9 @@ class ViewController: CryptoMarketViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        let _ = NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView(notification:)), name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
+        
+        NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
             self.loadDataFromUserDefaults()
             
             self.refreshDataFromUserDefaults()
@@ -123,7 +129,6 @@ class ViewController: CryptoMarketViewController {
         
     }
     
-    
     override func viewDidDisappear(_ animated: Bool) {
         super.viewDidDisappear(animated)
         
@@ -145,11 +150,7 @@ class ViewController: CryptoMarketViewController {
                 
                 if error == nil {
                     guard let data = self.singleCryptocurrencyData else { return }
-                    
-//                    if data.id == "bitcoin" {
-//                        print("VC", data.priceUsd)
-//                    }
-                    
+
                     cryptoMarketData[i] = data
                     dispatchGroup.leave()
                 }
@@ -158,7 +159,6 @@ class ViewController: CryptoMarketViewController {
         
         dispatchGroup.notify(queue: .main) {
             self.cryptoMarketData = cryptoMarketData
-//            print( self.cryptoMarketData?.map { $0.priceUsd } ?? "" )
             CryptoMarketService.shared.saveArray(self.cryptoMarketData!, forKey: CryptoMarketService.DataManager.defaultsKey)
             
             DispatchQueue.main.async {
@@ -206,11 +206,12 @@ class ViewController: CryptoMarketViewController {
         let infoButton = UIButton(type: .infoLight)
         infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
         
-        let leftItem = UIBarButtonItem(customView: dateLabel)
-        let rightItem = UIBarButtonItem(customView: infoButton)
         
-        self.navigationItem.leftBarButtonItem = leftItem
-        self.navigationItem.rightBarButtonItem = rightItem
+        let dateItem = UIBarButtonItem(customView: dateLabel)
+        let infoItem = UIBarButtonItem(customView: infoButton)
+        
+        self.navigationItem.leftBarButtonItem = dateItem
+        self.navigationItem.rightBarButtonItems = [infoItem]
 
         navigationItem.title =  "CCX Monitor"
         navigationController?.view.backgroundColor = UIColor.white
@@ -218,7 +219,7 @@ class ViewController: CryptoMarketViewController {
             navigationController?.navigationBar.prefersLargeTitles = true
         }
         
-        print(infoButton.tintColor.description)
+        
     }
 
     fileprivate func setupTableView() {
@@ -245,6 +246,12 @@ class ViewController: CryptoMarketViewController {
         }
     }
     
+    @objc func addItemHandler(_ sender: UIBarButtonItem) {
+        let add = AddViewController()
+        let nav = UINavigationController(rootViewController: add)
+        present(nav, animated: true)
+    }
+    
     @objc func removeBanner() {
         appDelegate.bannerViewState = .removed
         self.tableView.sectionHeaderHeight = 0.0
@@ -258,20 +265,6 @@ class ViewController: CryptoMarketViewController {
 
 
     @objc func infoButtonTapped(_ sender: UIBarButtonItem) {
-        let alertController = UIAlertController(title: "Data powered by", message: nil, preferredStyle: .actionSheet)
- 
-        let coinMarketCapAction = UIAlertAction(title: "CoinMarketCap.com", style: .default) { (action) in
-            self.openSafari(action)
-        }
-        let removeAdsAction = UIAlertAction(title: "Remove ads for session", style: .default) { (action) in
-            self.removeBanner()
-        }
-        let cancelAction = UIAlertAction(title: "Cancel", style: .cancel, handler: nil)
-        
-        alertController.addAction(coinMarketCapAction)
-        alertController.addAction(removeAdsAction)
-        alertController.addAction(cancelAction)
-        
         let infoViewController = InformationViewController()
         infoViewController.navigationController?.navigationBar.prefersLargeTitles = false
         let navController = UINavigationController(rootViewController: infoViewController)
@@ -383,7 +376,7 @@ extension ViewController: EditListDelegate {
 }
 
 extension ViewController: RefreshDelegate {
-    func refreshTableView() {
+    func refreshTableView(notification: Notification) {
         self.loadDataFromUserDefaults()
         DispatchQueue.main.async {
             self.tableView.reloadData()
@@ -415,6 +408,7 @@ extension ViewController: UIViewControllerPreviewingDelegate {
             guard let data = self.cryptoMarketData else { return nil }
             
             let detailViewController = DetailViewController(data: data[path.row])
+            
             
             previewingContext.sourceRect = self.view.convert(cell.frame, from: tableView)
             

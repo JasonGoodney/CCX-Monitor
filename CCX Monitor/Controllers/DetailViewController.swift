@@ -10,6 +10,7 @@ import UIKit
 import CryptoMarketDataKit
 import GoogleMobileAds
 
+
 class DetailViewController: UIViewController {
     
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
@@ -66,16 +67,9 @@ class DetailViewController: UIViewController {
         super.didReceiveMemoryWarning()
         // Dispose of any resources that can be recreated.
     }
-    
-    override var previewActionItems: [UIPreviewActionItem] {
-        let deleteAction = UIPreviewAction(title: "Delete", style: .destructive) { (action, viewController) -> Void in
-            print("You deleted the photo")
-        }
-        
-        return [deleteAction]
-    }
 
 }
+
 
 extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
     func numberOfSections(in tableView: UITableView) -> Int {
@@ -89,7 +83,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
         headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
@@ -97,7 +91,7 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return appDelegate.bannerView
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         
         switch appDelegate.bannerViewState {
         case .present:

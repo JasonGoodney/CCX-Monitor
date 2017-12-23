@@ -76,16 +76,12 @@ class EditListViewController: CryptoMarketViewController {
         toolbarItems.append(flexibleSpace)
         toolbarItems.append(doneButtonItem)
         
-        //self.setToolbarItems([addButtonItem, flexibleSpace, doneButtonItem], animated: true)
-        //self.navigationController?.isToolbarHidden = false
-        
-        navigationItem.leftBarButtonItem = addButtonItem
-        navigationItem.rightBarButtonItem = doneButtonItem
-        
+        self.setToolbarItems([addButtonItem, flexibleSpace, doneButtonItem], animated: true)
+        self.navigationController?.isToolbarHidden = false
     }
 
     @objc func doneHandler(_ sender: UIBarButtonItem) {
-        self.delegate?.refreshTableView()
+        NotificationCenter.default.post(name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         self.dismiss(animated: true)
     }
     
@@ -107,7 +103,7 @@ extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
         return rowCount
     }
     
-    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
         headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
@@ -115,7 +111,7 @@ extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
         return headerView
     }
     
-    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch appDelegate.bannerViewState {
         case .present:
             return appDelegate.bannerView.frame.height
