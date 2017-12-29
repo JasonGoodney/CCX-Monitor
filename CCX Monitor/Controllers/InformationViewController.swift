@@ -49,17 +49,26 @@ class InformationViewController: FormViewController {
                         row.updateCell()
                     })
             +++ Section("Open Source Libraries")
-                <<< SwitchRow("switchRowTag") { row in
-                    row.title = "Show labraries used"
-                }
-                <<< LabelRow(){
+        
+                <<< LabelRow() { row in
+                    row.title = "Show Acknowledgements"
                     
-                    $0.hidden = Condition.function(["switchRowTag"], { form in
-                        return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+                    
+                    }.onCellSelection({ (cell, row) in
+                        
+                        self.showLibrariesUsed(row)
                     })
-                    $0.title = "Switch is on!"
-                    
-                }
+//                <<< SwitchRow("switchRowTag") { row in
+//                    row.title = "Show labraries used"
+//                }
+//                <<< LabelRow(){
+//
+//                    $0.hidden = Condition.function(["switchRowTag"], { form in
+//                        return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
+//                    })
+//                    $0.title = "Switch is on!"
+//
+//                }
         
     }
 
@@ -85,6 +94,11 @@ class InformationViewController: FormViewController {
             let svc = SFSafariViewController(url: url)
             present(svc, animated: true, completion: nil)
         }
+    }
+    
+    @objc func showLibrariesUsed(_ sender: Any) {
+        let openSourceLibrariesViewController = OpenSourceLibrariesViewController()
+        navigationController?.pushViewController(openSourceLibrariesViewController, animated: true)
     }
 
 }

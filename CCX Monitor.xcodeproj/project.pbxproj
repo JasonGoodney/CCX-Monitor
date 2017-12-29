@@ -15,6 +15,7 @@
 		D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */; };
 		D72164F01FDCFB2C00CEDD80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */; };
 		D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */; };
+		D75104FD1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */; };
 		D763CFBD1FDE4D0100F5E9FC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */; };
 		D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */; };
 		D763CFCA1FDF29D400F5E9FC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */; };
@@ -23,6 +24,7 @@
 		D763D05C1FDF6F9300F5E9FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05B1FDF6F9300F5E9FC /* DataManager.swift */; };
 		D763D05F1FDF6F9900F5E9FC /* GlobalMarketTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */; };
 		D763D0601FDF6F9900F5E9FC /* Ticker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05E1FDF6F9900F5E9FC /* Ticker.swift */; };
+		D795CAFF1FF42EB100CCB1BC /* Acknowledgements.swift in Sources */ = {isa = PBXBuildFile; fileRef = D795CAFE1FF42EB100CCB1BC /* Acknowledgements.swift */; };
 		D79CAEDF1FE040A000CC7C19 /* CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */; };
 		D79CAEE61FE040A000CC7C19 /* CryptoMarketDataKitTests.swift in Sources */ = {isa = PBXBuildFile; fileRef = D79CAEE51FE040A000CC7C19 /* CryptoMarketDataKitTests.swift */; };
 		D79CAEE81FE040A000CC7C19 /* CryptoMarketDataKit.h in Headers */ = {isa = PBXBuildFile; fileRef = D79CAED81FE040A000CC7C19 /* CryptoMarketDataKit.h */; settings = {ATTRIBUTES = (Public, ); }; };
@@ -111,6 +113,7 @@
 		D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = EditListViewController.swift; sourceTree = "<group>"; };
 		D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = DetailViewController.swift; sourceTree = "<group>"; };
 		D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMarketView.swift; sourceTree = "<group>"; };
+		D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLibrariesTableViewController.swift; sourceTree = "<group>"; };
 		D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
 		D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CCX Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
@@ -121,6 +124,7 @@
 		D763D05B1FDF6F9300F5E9FC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMarketTicker.swift; sourceTree = "<group>"; };
 		D763D05E1FDF6F9900F5E9FC /* Ticker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = Ticker.swift; sourceTree = "<group>"; };
+		D795CAFE1FF42EB100CCB1BC /* Acknowledgements.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Acknowledgements.swift; sourceTree = "<group>"; };
 		D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = CryptoMarketDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		D79CAED81FE040A000CC7C19 /* CryptoMarketDataKit.h */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.c.h; path = CryptoMarketDataKit.h; sourceTree = "<group>"; };
 		D79CAED91FE040A000CC7C19 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
@@ -337,6 +341,7 @@
 				D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */,
 				D717F13A1FE8210700D138BB /* LoadingViewController.swift */,
 				D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */,
+				D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */,
 			);
 			path = Controllers;
 			sourceTree = "<group>";
@@ -355,6 +360,7 @@
 			children = (
 				D763D05E1FDF6F9900F5E9FC /* Ticker.swift */,
 				D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */,
+				D795CAFE1FF42EB100CCB1BC /* Acknowledgements.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -791,6 +797,8 @@
 				D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */,
 				D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */,
 				D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */,
+				D795CAFF1FF42EB100CCB1BC /* Acknowledgements.swift in Sources */,
+				D75104FD1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift in Sources */,
 				D7A1D8A71FEAC71400BED9A1 /* InformationViewController.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;

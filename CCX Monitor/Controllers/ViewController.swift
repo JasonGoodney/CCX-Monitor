@@ -16,6 +16,10 @@ import GoogleMobileAds
     func refreshTableView(notification: Notification)
 }
 
+enum UserDefaultsKey: String {
+    case isFirstAppLaunch
+}
+
 enum Refresh: String {
     case tableView
 }
@@ -32,9 +36,10 @@ class ViewController: CryptoMarketViewController {
         return view
     }()
 
-    fileprivate var globalMarketView: GlobalMarketView = {
+    fileprivate lazy var globalMarketView: GlobalMarketView = {
         let view = GlobalMarketView()
         view.frame.size = CGSize(width: UIScreen.main.bounds.width, height: 44)
+        
         return view
     }()
     
@@ -50,6 +55,8 @@ class ViewController: CryptoMarketViewController {
     let loadingViewController = LoadingViewController()
     var timer  = Timer()
     
+    
+    
     deinit {
         NotificationCenter.default.removeObserver(self)
         timer.invalidate()
@@ -58,10 +65,43 @@ class ViewController: CryptoMarketViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView(notification:)), name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
+        // this does not work
+//        let isFirstAppLaunch = UserDefaults.isFirstLaunch()
+//        print(isFirstAppLaunch)
+//        if isFirstAppLaunch {
+//            getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
+//                if error == nil {
+//                    guard let data = self.cryptoMarketData else { return }
+//                    CryptoMarketService.shared.saveArray(data, forKey: CryptoMarketService.DataManager.defaultsKey)
+//                }
+//            }
+//        } else {
+//            UserDefaults.standard.set(false, forKey: UserDefaultsKey.isFirstAppLaunch.rawValue)
+//        }
+//
+        
+        if (UserDefaults.standard.bool(forKey: "HasLaunchedOnce")) {
+            // App already launched
+            
+            
+            
+        } else {
+            // This is the first launch ever
+            getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
+                if error == nil {
+                    guard let data = self.cryptoMarketData else { return }
+                    CryptoMarketService.shared.saveArray(data, forKey: CryptoMarketService.DataManager.defaultsKey)
+                }
+            }
+            UserDefaults.standard.set(true, forKey: "HasLaunchedOnce")
+            UserDefaults.standard.synchronize()
+        }
+        
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
-            self.loadDataFromUserDefaults()
+            self.loadDataFromUserDefaults(completion: {
+                //    self.refreshDataFromUserDefaults()
+            })
             
             self.refreshDataFromUserDefaults()
         }
@@ -72,22 +112,15 @@ class ViewController: CryptoMarketViewController {
         
         updateGlobalTickerData {
             self.setupGlobalMarketView()
+            
         }
+
         
-        if (self.cryptoMarketData?.isEmpty == true) {
-            getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
-                if error == nil {
-                    guard let data = self.cryptoMarketData else { return }
-                    CryptoMarketService.shared.saveArray(data, forKey: CryptoMarketService.DataManager.defaultsKey)
-                }
-            }
-        }
-       
-        //tableView.reloadData()
+        NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView(notification:)), name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         
         runDataRefreshTimer()
         
-        
+        //self.tableView.reloadData()
         
     }
 
@@ -172,28 +205,14 @@ class ViewController: CryptoMarketViewController {
     fileprivate func setupGlobalMarketView(){
         view.addSubview(globalMarketView)
         globalMarketView.backgroundColor = .white
-        
         globalMarketView.delegate = self
-        globalMarketView.snp.makeConstraints({ (make) in
+        
+        globalMarketView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.bottom.equalToSuperview()
             make.height.equalTo(44)
-            
-            if #available(iOS 11.0, *) {
-                //Bottom guide
-                make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottomMargin)
-                //Leading guide
-                make.leading.equalTo(view.safeAreaLayoutGuide.snp.leadingMargin)
-                //Trailing guide
-                make.trailing.equalTo(view.safeAreaLayoutGuide.snp.trailingMargin)
-                
-            } else {
-                make.bottomMargin.equalToSuperview()
-                make.width.equalToSuperview()
-            }
-
-        })
-        
-        
-    }
+        }
+  }
 
 
     private func setupNavBar() {
@@ -225,10 +244,8 @@ class ViewController: CryptoMarketViewController {
     fileprivate func setupTableView() {
         view.addSubview(tableView)
         tableView.snp.makeConstraints({ (make) in
-            make.top.equalToSuperview()
-            make.width.equalToSuperview()
-            let height = globalMarketView.bounds.size.height
-            make.bottom.equalToSuperview().inset(height)
+            let height = globalMarketView.frame.height
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(0, 0, height, 0))
         })
         
     }
@@ -324,17 +341,32 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         headerView.backgroundColor = .white
         headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
         headerView.addSubview(appDelegate.bannerView)
+        
         return headerView
     }
     
     func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
         switch appDelegate.bannerViewState {
         case .present:
-            return appDelegate.bannerView.frame.height
+            let height = appDelegate.bannerView.frame.height
+            tableView.scrollIndicatorInsets.top = height
+            return height
         case .removed:
             return 0.0
         }
     }
+    
+//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
+//        return globalMarketView
+//    }
+//
+//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
+//        if let toolBarHeight = navigationController?.toolbar.frame.height {
+//            tableView.scrollIndicatorInsets.bottom = toolBarHeight
+//            return toolBarHeight
+//        }
+//        return 0
+//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TickerCell.reuseIdentifier(), for: indexPath) as! TickerCell
@@ -357,6 +389,8 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
 
         tableView.deselectRow(at: indexPath, animated: true)
     }
+    
+    
 }
 
 // MARK: EditListDelegate
@@ -426,3 +460,16 @@ extension ViewController: UIViewControllerPreviewingDelegate {
     
 }
 
+extension UserDefaults {
+    // check for is first launch - only true on first invocation after app install, false on all further invocations
+    // Note: Store this value in AppDelegate if you have multiple places where you are checking for this flag
+    static func isFirstLaunch() -> Bool {
+        let hasBeenLaunchedBeforeFlag = UserDefaultsKey.isFirstAppLaunch.rawValue
+        let isFirstLaunch = !UserDefaults.standard.bool(forKey: hasBeenLaunchedBeforeFlag)
+        if (isFirstLaunch) {
+            UserDefaults.standard.set(true, forKey: hasBeenLaunchedBeforeFlag)
+            UserDefaults.standard.synchronize()
+        }
+        return isFirstLaunch
+    }
+}

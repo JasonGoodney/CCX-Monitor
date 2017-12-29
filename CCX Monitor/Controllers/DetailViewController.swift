@@ -121,7 +121,7 @@ extension DetailViewController {
     
     // Dafuq is this?
     // Makes sure an assignment in not nil and crash the app
-    // Add a value of "nil" is it is
+    // Add a value of "nil" if it is
     // If it is nil, I dont want it to be user facing
     // So the value and the matching key index are removed
     // pieceacrap
