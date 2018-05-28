@@ -16,9 +16,6 @@
 		D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */; };
 		D75104FD1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */; };
 		D763CFBD1FDE4D0100F5E9FC /* AddViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */; };
-		D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */; };
-		D763CFCA1FDF29D400F5E9FC /* TodayViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */; };
-		D763CFCD1FDF29D400F5E9FC /* MainInterface.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */; };
 		D763D05A1FDF6F8800F5E9FC /* StructArchiver.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D0591FDF6F8800F5E9FC /* StructArchiver.swift */; };
 		D763D05C1FDF6F9300F5E9FC /* DataManager.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05B1FDF6F9300F5E9FC /* DataManager.swift */; };
 		D763D05F1FDF6F9900F5E9FC /* GlobalMarketTicker.swift in Sources */ = {isa = PBXBuildFile; fileRef = D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */; };
@@ -43,7 +40,6 @@
 		D7C2CE1B1FD737AA00EA143D /* TickerCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB3D1FD7338C002E2716 /* TickerCell.swift */; };
 		D7E5F43A1FE2BA92002172DE /* GoogleService-Info.plist in Resources */ = {isa = PBXBuildFile; fileRef = D7E5F4391FE2BA92002172DE /* GoogleService-Info.plist */; };
 		D7E5F43E1FE31C21002172DE /* FatGrayLabel.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5F43D1FE31C21002172DE /* FatGrayLabel.swift */; };
-		D7E5F4401FE42366002172DE /* TodayWidgetTableViewCell.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */; };
 /* End PBXBuildFile section */
 
 /* Begin PBXContainerItemProxy section */
@@ -114,11 +110,7 @@
 		D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GlobalMarketView.swift; sourceTree = "<group>"; };
 		D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = OpenSourceLibrariesTableViewController.swift; sourceTree = "<group>"; };
 		D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AddViewController.swift; sourceTree = "<group>"; };
-		D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */ = {isa = PBXFileReference; explicitFileType = "wrapper.app-extension"; includeInIndex = 0; path = "CCX Widget.appex"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D763CFC61FDF29D400F5E9FC /* NotificationCenter.framework */ = {isa = PBXFileReference; lastKnownFileType = wrapper.framework; name = NotificationCenter.framework; path = System/Library/Frameworks/NotificationCenter.framework; sourceTree = SDKROOT; };
-		D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayViewController.swift; sourceTree = "<group>"; };
-		D763CFCC1FDF29D400F5E9FC /* Base */ = {isa = PBXFileReference; lastKnownFileType = file.storyboard; name = Base; path = Base.lproj/MainInterface.storyboard; sourceTree = "<group>"; };
-		D763CFCE1FDF29D400F5E9FC /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		D763D0591FDF6F8800F5E9FC /* StructArchiver.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = StructArchiver.swift; sourceTree = "<group>"; };
 		D763D05B1FDF6F9300F5E9FC /* DataManager.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = DataManager.swift; sourceTree = "<group>"; };
 		D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = sourcecode.swift; path = GlobalMarketTicker.swift; sourceTree = "<group>"; };
@@ -149,19 +141,10 @@
 		D7C1AB3D1FD7338C002E2716 /* TickerCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TickerCell.swift; sourceTree = "<group>"; };
 		D7E5F4391FE2BA92002172DE /* GoogleService-Info.plist */ = {isa = PBXFileReference; fileEncoding = 4; lastKnownFileType = text.plist.xml; path = "GoogleService-Info.plist"; sourceTree = "<group>"; };
 		D7E5F43D1FE31C21002172DE /* FatGrayLabel.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = FatGrayLabel.swift; sourceTree = "<group>"; };
-		D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = TodayWidgetTableViewCell.swift; sourceTree = "<group>"; };
 		DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CryptoMarketDataKit.debug.xcconfig"; path = "Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit.debug.xcconfig"; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
-		D763CFC21FDF29D400F5E9FC /* Frameworks */ = {
-			isa = PBXFrameworksBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D763CFC71FDF29D400F5E9FC /* NotificationCenter.framework in Frameworks */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D79CAED21FE040A000CC7C19 /* Frameworks */ = {
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
@@ -249,17 +232,6 @@
 			path = Helpers;
 			sourceTree = "<group>";
 		};
-		D763CFC81FDF29D400F5E9FC /* CCX Widget */ = {
-			isa = PBXGroup;
-			children = (
-				D763CFC91FDF29D400F5E9FC /* TodayViewController.swift */,
-				D7E5F43F1FE42366002172DE /* TodayWidgetTableViewCell.swift */,
-				D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */,
-				D763CFCE1FDF29D400F5E9FC /* Info.plist */,
-			);
-			path = "CCX Widget";
-			sourceTree = "<group>";
-		};
 		D79CAED71FE040A000CC7C19 /* CryptoMarketDataKit */ = {
 			isa = PBXGroup;
 			children = (
@@ -286,7 +258,6 @@
 			children = (
 				D7C1AB171FD71B46002E2716 /* CCX Monitor */,
 				D7C1AB2C1FD71B46002E2716 /* CCX MonitorTests */,
-				D763CFC81FDF29D400F5E9FC /* CCX Widget */,
 				D79CAED71FE040A000CC7C19 /* CryptoMarketDataKit */,
 				D79CAEE41FE040A000CC7C19 /* CryptoMarketDataKitTests */,
 				D7C1AB161FD71B46002E2716 /* Products */,
@@ -300,7 +271,6 @@
 			children = (
 				D7C1AB151FD71B46002E2716 /* CCX Monitor.app */,
 				D7C1AB291FD71B46002E2716 /* CCX MonitorTests.xctest */,
-				D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */,
 				D79CAED61FE040A000CC7C19 /* CryptoMarketDataKit.framework */,
 				D79CAEDE1FE040A000CC7C19 /* CryptoMarketDataKitTests.xctest */,
 			);
@@ -406,23 +376,6 @@
 /* End PBXHeadersBuildPhase section */
 
 /* Begin PBXNativeTarget section */
-		D763CFC41FDF29D400F5E9FC /* CCX Widget */ = {
-			isa = PBXNativeTarget;
-			buildConfigurationList = D763CFD21FDF29D400F5E9FC /* Build configuration list for PBXNativeTarget "CCX Widget" */;
-			buildPhases = (
-				D763CFC11FDF29D400F5E9FC /* Sources */,
-				D763CFC21FDF29D400F5E9FC /* Frameworks */,
-				D763CFC31FDF29D400F5E9FC /* Resources */,
-			);
-			buildRules = (
-			);
-			dependencies = (
-			);
-			name = "CCX Widget";
-			productName = "CCX Widget";
-			productReference = D763CFC51FDF29D400F5E9FC /* CCX Widget.appex */;
-			productType = "com.apple.product-type.app-extension";
-		};
 		D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */ = {
 			isa = PBXNativeTarget;
 			buildConfigurationList = D79CAEED1FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKit" */;
@@ -511,10 +464,6 @@
 				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jason Goodney";
 				TargetAttributes = {
-					D763CFC41FDF29D400F5E9FC = {
-						CreatedOnToolsVersion = 9.2;
-						ProvisioningStyle = Automatic;
-					};
 					D79CAED51FE040A000CC7C19 = {
 						CreatedOnToolsVersion = 9.2;
 						LastSwiftMigration = 0920;
@@ -552,7 +501,6 @@
 			targets = (
 				D7C1AB141FD71B46002E2716 /* CCX Monitor */,
 				D7C1AB281FD71B46002E2716 /* CCX MonitorTests */,
-				D763CFC41FDF29D400F5E9FC /* CCX Widget */,
 				D79CAED51FE040A000CC7C19 /* CryptoMarketDataKit */,
 				D79CAEDD1FE040A000CC7C19 /* CryptoMarketDataKitTests */,
 			);
@@ -560,14 +508,6 @@
 /* End PBXProject section */
 
 /* Begin PBXResourcesBuildPhase section */
-		D763CFC31FDF29D400F5E9FC /* Resources */ = {
-			isa = PBXResourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D763CFCD1FDF29D400F5E9FC /* MainInterface.storyboard in Resources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D79CAED41FE040A000CC7C19 /* Resources */ = {
 			isa = PBXResourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -685,15 +625,6 @@
 /* End PBXShellScriptBuildPhase section */
 
 /* Begin PBXSourcesBuildPhase section */
-		D763CFC11FDF29D400F5E9FC /* Sources */ = {
-			isa = PBXSourcesBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-				D763CFCA1FDF29D400F5E9FC /* TodayViewController.swift in Sources */,
-				D7E5F4401FE42366002172DE /* TodayWidgetTableViewCell.swift in Sources */,
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-		};
 		D79CAED11FE040A000CC7C19 /* Sources */ = {
 			isa = PBXSourcesBuildPhase;
 			buildActionMask = 2147483647;
@@ -770,14 +701,6 @@
 /* End PBXTargetDependency section */
 
 /* Begin PBXVariantGroup section */
-		D763CFCB1FDF29D400F5E9FC /* MainInterface.storyboard */ = {
-			isa = PBXVariantGroup;
-			children = (
-				D763CFCC1FDF29D400F5E9FC /* Base */,
-			);
-			name = MainInterface.storyboard;
-			sourceTree = "<group>";
-		};
 		D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */ = {
 			isa = PBXVariantGroup;
 			children = (
@@ -789,36 +712,6 @@
 /* End PBXVariantGroup section */
 
 /* Begin XCBuildConfiguration section */
-		D763CFD31FDF29D400F5E9FC /* Debug */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K2R548H5LT;
-				INFOPLIST_FILE = "CCX Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor.CCX-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Debug;
-		};
-		D763CFD41FDF29D400F5E9FC /* Release */ = {
-			isa = XCBuildConfiguration;
-			buildSettings = {
-				CODE_SIGN_STYLE = Automatic;
-				DEVELOPMENT_TEAM = K2R548H5LT;
-				INFOPLIST_FILE = "CCX Widget/Info.plist";
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @executable_path/../../Frameworks";
-				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor.CCX-Widget";
-				PRODUCT_NAME = "$(TARGET_NAME)";
-				SKIP_INSTALL = YES;
-				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
-			};
-			name = Release;
-		};
 		D79CAEEE1FE040A000CC7C19 /* Debug */ = {
 			isa = XCBuildConfiguration;
 			baseConfigurationReference = DF80F96EBE4502F2401A985D /* Pods-CryptoMarketDataKit.debug.xcconfig */;
@@ -1103,15 +996,6 @@
 /* End XCBuildConfiguration section */
 
 /* Begin XCConfigurationList section */
-		D763CFD21FDF29D400F5E9FC /* Build configuration list for PBXNativeTarget "CCX Widget" */ = {
-			isa = XCConfigurationList;
-			buildConfigurations = (
-				D763CFD31FDF29D400F5E9FC /* Debug */,
-				D763CFD41FDF29D400F5E9FC /* Release */,
-			);
-			defaultConfigurationIsVisible = 0;
-			defaultConfigurationName = Release;
-		};
 		D79CAEED1FE040A000CC7C19 /* Build configuration list for PBXNativeTarget "CryptoMarketDataKit" */ = {
 			isa = XCConfigurationList;
 			buildConfigurations = (
