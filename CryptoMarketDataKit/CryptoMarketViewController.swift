@@ -8,8 +8,6 @@
 
 import UIKit
 
-
-// Make into struct/protocol
 open class CryptoMarketViewController: UIViewController {
     
     public var cryptoMarketData: [CryptoMarketData]?
@@ -60,7 +58,7 @@ open class CryptoMarketViewController: UIViewController {
     public func loadDataFromUserDefaults(completion: (() -> Void)? = nil) {
         do {
             self.cryptoMarketData = try CryptoMarketService.shared.loadArray(forKey: CryptoMarketService.DataManager.defaultsKey)
-           // print("load data from UserDefaults")
+           
         } catch {
             print("defaults are nil")
         }

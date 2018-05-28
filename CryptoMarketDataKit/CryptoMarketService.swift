@@ -75,8 +75,6 @@ open class CryptoMarketService {
                     let data = try decorder.decode([CryptoMarketData].self, from: responseData)
                     completion(data, nil)
                 case .globalMarket:
-                    //let data = try decorder.decode([GlobalMarketData].self, from: responseData)
-                    //completion(data, nil)
                     break
                 }
                 
@@ -91,19 +89,19 @@ open class CryptoMarketService {
         
     }
     
-    public func saveArray<T>(_ array: [T], forKey name: String) {
+    public func saveArray<T: Encodable>(_ array: [T], forKey name: String) {
         
         let jsonEncoder = JSONEncoder()
         if let savedData = try? jsonEncoder.encode(array) {
             let defaults = UserDefaults.standard
             defaults.set(savedData, forKey: name)
-            //print("Saved data to UserDefaults")
+            
         } else {
             print("Failed to save.")
         }
     }
     
-    public func loadArray<T>(forKey name: String) throws -> [T] {
+    public func loadArray<T: Decodable>(forKey name: String) throws -> [T] {
         let defaults = UserDefaults.standard
         var array = [T]()
         

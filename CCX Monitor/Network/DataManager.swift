@@ -26,7 +26,7 @@ public struct DataManager {
         DispatchQueue.global(qos: .background).async {
             if let url = Bundle.main.url(forResource: resource, withExtension: "json") {
                 do {
-                    //let url = URL(fileURLWithPath: filePath)
+                    
                     let data = try! Data(contentsOf: url, options: Data.ReadingOptions.mappedIfSafe)
                     completion(data, nil)
                 }

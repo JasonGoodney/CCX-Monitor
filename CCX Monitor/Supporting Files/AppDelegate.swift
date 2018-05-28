@@ -48,12 +48,9 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
     var bannerViewState = BannerViewState.present
     weak var viewController: ViewController?
     
-    let testAdUnitId = "ca-app-pub-3940256099942544/2934735716"
-    let adUnitId = "ca-app-pub-8254533273212924/8533734444"
-    
     lazy var bannerView: GADBannerView = {
         let view = GADBannerView(adSize: kGADAdSizeSmartBannerPortrait)
-        view.adUnitID = "ca-app-pub-8254533273212924/8533734444"
+        view.adUnitID = Firebase.adUnitId
         view.delegate = self
         return view
     }()
@@ -69,12 +66,8 @@ class AppDelegate: UIResponder, UIApplicationDelegate {
         // Use Firebase library to configure APIs.
         FirebaseApp.configure()
         
-        
-        let experimpentalAppId = "ca-app-pub-3940256099942544~1458002511"
-        let appId = "ca-app-pub-8254533273212924~4851184899"
-        
         // Initialize the Google Mobile Ads SDK.
-        GADMobileAds.configure(withApplicationID: appId)
+        GADMobileAds.configure(withApplicationID: Firebase.appId)
 
         
         
@@ -154,9 +147,6 @@ extension AppDelegate: GADBannerViewDelegate {
     func adView(_ bannerView: GADBannerView,
                 didFailToReceiveAdWithError error: GADRequestError) {
         print("adView:didFailToReceiveAdWithError: \(error.localizedDescription)")
-        //viewController?.bannerViewStateDelegate?.removeHeaderViewForFailedAdView()
-        //bannerViewState = .removed
-        //viewController?.bannerViewStateDelegate?.removeHeaderViewForFailedAdView()
         
     }
     

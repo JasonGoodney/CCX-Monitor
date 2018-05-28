@@ -58,17 +58,17 @@ class InformationViewController: FormViewController {
                         
                         self.showLibrariesUsed(row)
                     })
-//                <<< SwitchRow("switchRowTag") { row in
-//                    row.title = "Show labraries used"
-//                }
-//                <<< LabelRow(){
-//
-//                    $0.hidden = Condition.function(["switchRowTag"], { form in
-//                        return !((form.rowBy(tag: "switchRowTag") as? SwitchRow)?.value ?? false)
-//                    })
-//                    $0.title = "Switch is on!"
-//
-//                }
+            +++ Section("App Icon Background from")
+            
+            <<< LabelRow() { row in
+                row.title = "mallibone.com"
+                
+                
+                }.onCellSelection({ (cell, row) in
+                    
+                    self.openSafari(with: "https://mallibone.com/post/see-how-to-run-xamarin-test-cloud-runs-from-the-command-line", row)
+                })
+
         
     }
 

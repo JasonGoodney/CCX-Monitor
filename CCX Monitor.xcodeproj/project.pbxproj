@@ -11,7 +11,6 @@
 		73423CF853279AB4EF92250F /* Pods_CCX_Monitor_CCX_MonitorTests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = 6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */; };
 		7CDBA37D2E4C043AAF8C2190 /* Pods_CCX_Monitor.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */; };
 		CC092408B566A029246B2D9E /* Pods_CryptoMarketDataKit.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */; };
-		D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D717F13A1FE8210700D138BB /* LoadingViewController.swift */; };
 		D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */; };
 		D72164F01FDCFB2C00CEDD80 /* DetailViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */; };
 		D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */ = {isa = PBXBuildFile; fileRef = D74E6B0A1FDB264F004711B4 /* GlobalMarketView.swift */; };
@@ -36,6 +35,7 @@
 		D7A1D8711FE89F5B00BED9A1 /* Assets.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */; };
 		D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */; };
 		D7A1D8A71FEAC71400BED9A1 /* InformationViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */; };
+		D7A6014320BB8BDD00B36F1A /* Firebase.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7A6014220BB8BDD00B36F1A /* Firebase.swift */; };
 		D7C1AB191FD71B46002E2716 /* AppDelegate.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB181FD71B46002E2716 /* AppDelegate.swift */; };
 		D7C1AB1B1FD71B46002E2716 /* ViewController.swift in Sources */ = {isa = PBXBuildFile; fileRef = D7C1AB1A1FD71B46002E2716 /* ViewController.swift */; };
 		D7C1AB231FD71B46002E2716 /* LaunchScreen.storyboard in Resources */ = {isa = PBXBuildFile; fileRef = D7C1AB211FD71B46002E2716 /* LaunchScreen.storyboard */; };
@@ -104,7 +104,6 @@
 		AA81C4F9543976EFEC4949CA /* Pods-CCX MonitorTests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-CCX MonitorTests.release.xcconfig"; path = "Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests.release.xcconfig"; sourceTree = "<group>"; };
 		C529973AD16C83951D7FE7CD /* Pods_CryptoMarketDataKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CryptoMarketDataKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_CCX_Monitor.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		D717F13A1FE8210700D138BB /* LoadingViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = LoadingViewController.swift; sourceTree = "<group>"; };
 		D72164E41FDC706700CEDD80 /* ConfigurableView.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ConfigurableView.swift; sourceTree = "<group>"; };
 		D72164E51FDC706700CEDD80 /* GenericCollectionViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericCollectionViewCell.swift; sourceTree = "<group>"; };
 		D72164E61FDC706700CEDD80 /* GenericTableViewCell.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = GenericTableViewCell.swift; sourceTree = "<group>"; };
@@ -137,6 +136,8 @@
 		D7A1D8701FE89F5B00BED9A1 /* Assets.xcassets */ = {isa = PBXFileReference; lastKnownFileType = folder.assetcatalog; path = Assets.xcassets; sourceTree = "<group>"; };
 		D7A1D8A01FE9ADC800BED9A1 /* Extensions.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Extensions.swift; sourceTree = "<group>"; };
 		D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = InformationViewController.swift; sourceTree = "<group>"; };
+		D7A6013D20BB60F900B36F1A /* SnapKit.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; path = SnapKit.framework; sourceTree = BUILT_PRODUCTS_DIR; };
+		D7A6014220BB8BDD00B36F1A /* Firebase.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Firebase.swift; sourceTree = "<group>"; };
 		D7C1AB151FD71B46002E2716 /* CCX Monitor.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = "CCX Monitor.app"; sourceTree = BUILT_PRODUCTS_DIR; };
 		D7C1AB181FD71B46002E2716 /* AppDelegate.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = AppDelegate.swift; sourceTree = "<group>"; };
 		D7C1AB1A1FD71B46002E2716 /* ViewController.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = ViewController.swift; sourceTree = "<group>"; };
@@ -216,6 +217,7 @@
 		941638F25D07EB7F8BB4D084 /* Frameworks */ = {
 			isa = PBXGroup;
 			children = (
+				D7A6013D20BB60F900B36F1A /* SnapKit.framework */,
 				CA605FEBBB2F9D8B63BCBCAC /* Pods_CCX_Monitor.framework */,
 				7946EB85784DCEB4E42F434E /* Pods_CCX_MonitorTests.framework */,
 				6ADADCEEACD881208BE7D366 /* Pods_CCX_Monitor_CCX_MonitorTests.framework */,
@@ -339,7 +341,6 @@
 				D72164EF1FDCFB2C00CEDD80 /* DetailViewController.swift */,
 				D72164ED1FDCCF8C00CEDD80 /* EditListViewController.swift */,
 				D763CFBC1FDE4D0100F5E9FC /* AddViewController.swift */,
-				D717F13A1FE8210700D138BB /* LoadingViewController.swift */,
 				D7A1D8A61FEAC71400BED9A1 /* InformationViewController.swift */,
 				D75104FB1FF41D6100F9D5DD /* OpenSourceLibrariesTableViewController.swift */,
 			);
@@ -361,6 +362,7 @@
 				D763D05E1FDF6F9900F5E9FC /* Ticker.swift */,
 				D763D05D1FDF6F9800F5E9FC /* GlobalMarketTicker.swift */,
 				D795CAFE1FF42EB100CCB1BC /* Acknowledgements.swift */,
+				D7A6014220BB8BDD00B36F1A /* Firebase.swift */,
 			);
 			path = Models;
 			sourceTree = "<group>";
@@ -430,7 +432,6 @@
 				D79CAED21FE040A000CC7C19 /* Frameworks */,
 				D79CAED31FE040A000CC7C19 /* Headers */,
 				D79CAED41FE040A000CC7C19 /* Resources */,
-				BDD08A26291CAF15EEDE7133 /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -469,7 +470,6 @@
 				D7C1AB121FD71B46002E2716 /* Frameworks */,
 				D7C1AB131FD71B46002E2716 /* Resources */,
 				33BB910F0A41E447F897BB08 /* [CP] Embed Pods Frameworks */,
-				AC2CA9727451406B555857F5 /* [CP] Copy Pods Resources */,
 				D79CAEF01FE040A000CC7C19 /* Embed Frameworks */,
 			);
 			buildRules = (
@@ -490,8 +490,6 @@
 				D7C1AB251FD71B46002E2716 /* Sources */,
 				D7C1AB261FD71B46002E2716 /* Frameworks */,
 				D7C1AB271FD71B46002E2716 /* Resources */,
-				576D66F946292DAB67F08E8E /* [CP] Embed Pods Frameworks */,
-				BC624CE188A50ECE5194486C /* [CP] Copy Pods Resources */,
 			);
 			buildRules = (
 			);
@@ -510,7 +508,7 @@
 			isa = PBXProject;
 			attributes = {
 				LastSwiftUpdateCheck = 0920;
-				LastUpgradeCheck = 0920;
+				LastUpgradeCheck = 0930;
 				ORGANIZATIONNAME = "Jason Goodney";
 				TargetAttributes = {
 					D763CFC41FDF29D400F5E9FC = {
@@ -666,26 +664,6 @@
 			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-frameworks.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
-		576D66F946292DAB67F08E8E /* [CP] Embed Pods Frameworks */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-				"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor-CCX MonitorTests/Pods-CCX Monitor-CCX MonitorTests-frameworks.sh",
-				"${BUILT_PRODUCTS_DIR}/SnapKit/SnapKit.framework",
-				"${BUILT_PRODUCTS_DIR}/VegaScrollFlowLayout/VegaScrollFlowLayout.framework",
-			);
-			name = "[CP] Embed Pods Frameworks";
-			outputPaths = (
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SnapKit.framework",
-				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/VegaScrollFlowLayout.framework",
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests-frameworks.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
 		7885E4D1B6851EFDB980B34C /* [CP] Check Pods Manifest.lock */ = {
 			isa = PBXShellScriptBuildPhase;
 			buildActionMask = 2147483647;
@@ -702,51 +680,6 @@
 			runOnlyForDeploymentPostprocessing = 0;
 			shellPath = /bin/sh;
 			shellScript = "diff \"${PODS_PODFILE_DIR_PATH}/Podfile.lock\" \"${PODS_ROOT}/Manifest.lock\" > /dev/null\nif [ $? != 0 ] ; then\n    # print error to STDERR\n    echo \"error: The sandbox is not in sync with the Podfile.lock. Run 'pod install' or update your CocoaPods installation.\" >&2\n    exit 1\nfi\n# This output is used by Xcode 'outputs' to avoid re-running this script phase.\necho \"SUCCESS\" > \"${SCRIPT_OUTPUT_FILE_0}\"\n";
-			showEnvVarsInLog = 0;
-		};
-		AC2CA9727451406B555857F5 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX Monitor/Pods-CCX Monitor-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BC624CE188A50ECE5194486C /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CCX MonitorTests/Pods-CCX MonitorTests-resources.sh\"\n";
-			showEnvVarsInLog = 0;
-		};
-		BDD08A26291CAF15EEDE7133 /* [CP] Copy Pods Resources */ = {
-			isa = PBXShellScriptBuildPhase;
-			buildActionMask = 2147483647;
-			files = (
-			);
-			inputPaths = (
-			);
-			name = "[CP] Copy Pods Resources";
-			outputPaths = (
-			);
-			runOnlyForDeploymentPostprocessing = 0;
-			shellPath = /bin/sh;
-			shellScript = "\"${SRCROOT}/Pods/Target Support Files/Pods-CryptoMarketDataKit/Pods-CryptoMarketDataKit-resources.sh\"\n";
 			showEnvVarsInLog = 0;
 		};
 /* End PBXShellScriptBuildPhase section */
@@ -787,6 +720,7 @@
 				D7C1AB1B1FD71B46002E2716 /* ViewController.swift in Sources */,
 				D763D05F1FDF6F9900F5E9FC /* GlobalMarketTicker.swift in Sources */,
 				D7E5F43E1FE31C21002172DE /* FatGrayLabel.swift in Sources */,
+				D7A6014320BB8BDD00B36F1A /* Firebase.swift in Sources */,
 				D763CFBD1FDE4D0100F5E9FC /* AddViewController.swift in Sources */,
 				D72164EE1FDCCF8C00CEDD80 /* EditListViewController.swift in Sources */,
 				D72164F01FDCFB2C00CEDD80 /* DetailViewController.swift in Sources */,
@@ -794,7 +728,6 @@
 				D7C1AB191FD71B46002E2716 /* AppDelegate.swift in Sources */,
 				D7C2CE1B1FD737AA00EA143D /* TickerCell.swift in Sources */,
 				D763D05C1FDF6F9300F5E9FC /* DataManager.swift in Sources */,
-				D717F13B1FE8210700D138BB /* LoadingViewController.swift in Sources */,
 				D74E6B0B1FDB264F004711B4 /* GlobalMarketView.swift in Sources */,
 				D7A1D8A11FE9ADC800BED9A1 /* Extensions.swift in Sources */,
 				D795CAFF1FF42EB100CCB1BC /* Acknowledgements.swift in Sources */,
@@ -987,6 +920,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -994,6 +928,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1044,6 +979,7 @@
 				CLANG_WARN_BOOL_CONVERSION = YES;
 				CLANG_WARN_COMMA = YES;
 				CLANG_WARN_CONSTANT_CONVERSION = YES;
+				CLANG_WARN_DEPRECATED_OBJC_IMPLEMENTATIONS = YES;
 				CLANG_WARN_DIRECT_OBJC_ISA_USAGE = YES_ERROR;
 				CLANG_WARN_DOCUMENTATION_COMMENTS = YES;
 				CLANG_WARN_EMPTY_BODY = YES;
@@ -1051,6 +987,7 @@
 				CLANG_WARN_INFINITE_RECURSION = YES;
 				CLANG_WARN_INT_CONVERSION = YES;
 				CLANG_WARN_NON_LITERAL_NULL_CONVERSION = YES;
+				CLANG_WARN_OBJC_IMPLICIT_RETAIN_SELF = YES;
 				CLANG_WARN_OBJC_LITERAL_CONVERSION = YES;
 				CLANG_WARN_OBJC_ROOT_CLASS = YES_ERROR;
 				CLANG_WARN_RANGE_LOOP_ANALYSIS = YES;
@@ -1087,6 +1024,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2R548H5LT;
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -1094,10 +1033,11 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_OPTIMIZATION_LEVEL = "-Onone";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Debug;
 		};
@@ -1108,6 +1048,8 @@
 				ALWAYS_EMBED_SWIFT_STANDARD_LIBRARIES = YES;
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				CLANG_ENABLE_MODULES = YES;
+				CODE_SIGN_IDENTITY = "iPhone Developer";
+				"CODE_SIGN_IDENTITY[sdk=iphoneos*]" = "iPhone Developer";
 				CODE_SIGN_STYLE = Automatic;
 				DEVELOPMENT_TEAM = K2R548H5LT;
 				HEADER_SEARCH_PATHS = "$(inherited)";
@@ -1115,9 +1057,10 @@
 				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
 				PRODUCT_BUNDLE_IDENTIFIER = "com.jasongoodney.CCX-Monitor";
 				PRODUCT_NAME = "$(TARGET_NAME)";
+				PROVISIONING_PROFILE_SPECIFIER = "";
 				SWIFT_OBJC_BRIDGING_HEADER = "";
 				SWIFT_VERSION = 4.0;
-				TARGETED_DEVICE_FAMILY = "1,2";
+				TARGETED_DEVICE_FAMILY = 1;
 			};
 			name = Release;
 		};

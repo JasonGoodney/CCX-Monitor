@@ -89,12 +89,6 @@ extension CryptoMarketData: Encodable {
         try container.encode(lastUpdated, forKey: .lastUpdated)
     }
     
-//    var dictionary: [String: Any] {
-//        return (try? JSONSerialization.jsonObject(with: JSONEncoder().encode(self))) as? [String: Any] ?? [:]
-//    }
-//    var nsDictionary: NSDictionary {
-//        return dictionary as NSDictionary
-//    }
 }
 
 extension CryptoMarketData: Decodable {

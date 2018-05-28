@@ -52,7 +52,6 @@ class ViewController: CryptoMarketViewController {
     weak var bannerViewStateDelegate: BannerViewStateDelegate?
     var isLaunch = true
     var notification: NSObjectProtocol?
-    let loadingViewController = LoadingViewController()
     var timer  = Timer()
     
     
@@ -65,27 +64,8 @@ class ViewController: CryptoMarketViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        // this does not work
-//        let isFirstAppLaunch = UserDefaults.isFirstLaunch()
-//        print(isFirstAppLaunch)
-//        if isFirstAppLaunch {
-//            getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
-//                if error == nil {
-//                    guard let data = self.cryptoMarketData else { return }
-//                    CryptoMarketService.shared.saveArray(data, forKey: CryptoMarketService.DataManager.defaultsKey)
-//                }
-//            }
-//        } else {
-//            UserDefaults.standard.set(false, forKey: UserDefaultsKey.isFirstAppLaunch.rawValue)
-//        }
-//
-        
-        if (UserDefaults.standard.bool(forKey: "HasLaunchedOnce")) {
-            // App already launched
-            
-            
-            
-        } else {
+        if !(UserDefaults.standard.bool(forKey: "HasLaunchedOnce")) {
+           
             // This is the first launch ever
             getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
                 if error == nil {
@@ -100,7 +80,7 @@ class ViewController: CryptoMarketViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
             self.loadDataFromUserDefaults(completion: {
-                //    self.refreshDataFromUserDefaults()
+                
             })
             
             self.refreshDataFromUserDefaults()
@@ -120,7 +100,7 @@ class ViewController: CryptoMarketViewController {
         
         runDataRefreshTimer()
         
-        //self.tableView.reloadData()
+        
         
     }
 
@@ -137,10 +117,10 @@ class ViewController: CryptoMarketViewController {
         
         
         if isLaunch == false {
-            //print("viewwillappear")
+            
             loadDataFromUserDefaults()
             refreshDataFromUserDefaults()
-            //self.tableView.reloadData()
+            
             
             isLaunch = !isLaunch
         }
@@ -150,12 +130,12 @@ class ViewController: CryptoMarketViewController {
     
     override func viewDidAppear(_ animated: Bool) {
         super.viewDidAppear(animated)
-        //print("viewdidappear")
+        
         if isLaunch == false {
             
             loadDataFromUserDefaults()
             refreshDataFromUserDefaults()
-            //self.tableView.reloadData()
+        
             
             isLaunch = !isLaunch
         }
@@ -209,7 +189,7 @@ class ViewController: CryptoMarketViewController {
         
         globalMarketView.snp.makeConstraints { (make) in
             make.width.equalToSuperview()
-            make.bottom.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
             make.height.equalTo(44)
         }
   }
@@ -355,18 +335,6 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
             return 0.0
         }
     }
-    
-//    func tableView(_ tableView: UITableView, viewForFooterInSection section: Int) -> UIView? {
-//        return globalMarketView
-//    }
-//
-//    func tableView(_ tableView: UITableView, heightForFooterInSection section: Int) -> CGFloat {
-//        if let toolBarHeight = navigationController?.toolbar.frame.height {
-//            tableView.scrollIndicatorInsets.bottom = toolBarHeight
-//            return toolBarHeight
-//        }
-//        return 0
-//    }
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: TickerCell.reuseIdentifier(), for: indexPath) as! TickerCell

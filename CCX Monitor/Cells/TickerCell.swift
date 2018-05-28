@@ -1,9 +1,9 @@
 //
-//  ShareCell.swift
-//  DynamicFlowLayoutDemo
+//  TickerCell.swift
+//  CCX Monitor
 //
-//  Created by Ivan Hahanov on inset/21/17.
-//  Copyright © 2017 Applikey. All rights reserved.
+//  Created by Jason Goodney on 12/5/17.
+//  Copyright © 2017 Jason Goodney. All rights reserved.
 //
 
 import UIKit
