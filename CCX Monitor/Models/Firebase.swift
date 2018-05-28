@@ -9,7 +9,6 @@
 import Foundation
 
 struct Firebase {
-    static let testAdUnitId = "ca-app-pub-3940256099942544/2934735716"
-    static let adUnitId = "ca-app-pub-8254533273212924/8533734444"
-    static let appId = "ca-app-pub-8254533273212924~4851184899"
+    static let adUnitId = "YOUR FIREBASE AD UNIT ID"
+    static let appId = "YOUR FIREBASE APP ID"
 }
