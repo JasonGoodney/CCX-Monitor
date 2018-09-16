@@ -12,6 +12,7 @@ import GoogleMobileAds
 
 class EditListViewController: CryptoMarketViewController {
     
+    // MARK: - Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     weak var delegate: RefreshDelegate?
@@ -31,6 +32,7 @@ class EditListViewController: CryptoMarketViewController {
     var name: String?
     var count: Int!
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
 
@@ -39,11 +41,7 @@ class EditListViewController: CryptoMarketViewController {
             appDelegate.bannerView.load(GADRequest())
         }
         
-        
-        view.addSubview(tableView)
-        tableView.frame = view.frame
-        
-        setupNavBar()
+        updateView()
         
         loadDataFromUserDefaults()
         
@@ -56,14 +54,22 @@ class EditListViewController: CryptoMarketViewController {
         loadDataFromUserDefaults()
         tableView.reloadData()
     }
+}
+
+// MARK: - UI
+private extension EditListViewController {
+    func updateView() {
+        setupNavBar()
+        setupTableView()
+    }
     
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.frame = view.frame
     }
     
     func setupNavBar() {
-
+        
         let doneButtonItem = UIBarButtonItem(barButtonSystemItem: .done, target: self, action: #selector(doneHandler(_:)))
         
         let addButtonItem = UIBarButtonItem(barButtonSystemItem: .add, target: self, action: #selector(addHandler(_:)))
@@ -79,7 +85,10 @@ class EditListViewController: CryptoMarketViewController {
         self.setToolbarItems([addButtonItem, flexibleSpace, doneButtonItem], animated: true)
         self.navigationController?.isToolbarHidden = false
     }
+}
 
+// MARK: - Actions
+private extension EditListViewController {
     @objc func doneHandler(_ sender: UIBarButtonItem) {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         self.dismiss(animated: true)
@@ -90,19 +99,32 @@ class EditListViewController: CryptoMarketViewController {
         let navViewController = UINavigationController(rootViewController: addViewController)
         present(navViewController, animated: true, completion: nil)
     }
-
 }
 
-extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-
+// MARK: - UITableViewDataSource
+extension EditListViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rowCount = self.cryptoMarketData?.count else { return 0 }
         return rowCount
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: reuseIdentifier)
+        }
+
+        symbol = self.cryptoMarketData![indexPath.row].symbol
+        name = self.cryptoMarketData![indexPath.row].name
+        cell?.textLabel?.text = symbol
+        cell?.detailTextLabel?.text = name
+        
+        return cell!
+    }
+}
+
+// MARK: - UITableViewDelegate
+extension EditListViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
@@ -120,28 +142,11 @@ extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
         }
     }
     
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.subtitle, reuseIdentifier: reuseIdentifier)
-        }
-
-        symbol = self.cryptoMarketData![indexPath.row].symbol
-        name = self.cryptoMarketData![indexPath.row].name
-        cell?.textLabel?.text = symbol
-        cell?.detailTextLabel?.text = name
-        
-        return cell!
-    }
-    
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         
         if editingStyle == .delete {
-            // Delete the row from the data source
             self.cryptoMarketData?.remove(at: indexPath.row)
             tableView.deleteRows(at: [indexPath], with: .fade)
-            
         }
         
         guard let data = self.cryptoMarketData else { return }
@@ -166,12 +171,9 @@ extension EditListViewController: UITableViewDelegate, UITableViewDataSource {
         
         data.remove(at: sourceIndexPath.row)
         data.insert(movedObject, at: destinationIndexPath.row)
-
         
         self.cryptoMarketData = data
         
         CryptoMarketService.shared.saveArray(data, forKey: DataManager.defaultsKey)
-        print( self.cryptoMarketData?.map { $0.name } ?? "" )
     }
 }
-

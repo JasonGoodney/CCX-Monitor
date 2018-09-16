@@ -13,6 +13,7 @@ import GoogleMobileAds
 
 class DetailViewController: UIViewController {
     
+    // MARK: - Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     var data: CryptoMarketData?
@@ -44,6 +45,7 @@ class DetailViewController: UIViewController {
         fatalError("init(coder:) has not been implemented")
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -52,30 +54,18 @@ class DetailViewController: UIViewController {
             appDelegate.bannerView.load(GADRequest())
         }
         
-
         view.addSubview(tableView)
         
-    
         guard let data = self.data else { return }
         navigationItem.title = data.name
 
         values = loadValues(from: data)
-        
-    }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
     }
 
 }
 
-
-extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+// MARK: - UITableViewDataSource
+extension DetailViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if keys.count == values.count {
             return keys.count
@@ -83,6 +73,25 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
         return 0
     }
     
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
+        if cell == nil {
+            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
+        }
+        
+        
+        cell?.textLabel?.text = keys[indexPath.row]
+        cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
+        
+        cell?.detailTextLabel?.text = values[indexPath.row]
+        
+        return cell!
+    }
+
+}
+
+// MARK: - UITableViewDelegate
+extension DetailViewController: UITableViewDelegate {
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
@@ -100,24 +109,9 @@ extension DetailViewController: UITableViewDelegate, UITableViewDataSource {
             return 0.0
         }
     }
-    
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        var cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier)
-        if cell == nil {
-            cell = UITableViewCell(style: UITableViewCellStyle.value1, reuseIdentifier: reuseIdentifier)
-        }
-        
-        
-        cell?.textLabel?.text = keys[indexPath.row]
-        cell?.textLabel?.font = UIFont.boldSystemFont(ofSize: 16)
-        
-        cell?.detailTextLabel?.text = values[indexPath.row]
-        
-        return cell!
-    }
 }
 
-extension DetailViewController {
+private extension DetailViewController {
     
     // Dafuq is this?
     // Makes sure an assignment in not nil and crash the app
@@ -125,7 +119,7 @@ extension DetailViewController {
     // If it is nil, I dont want it to be user facing
     // So the value and the matching key index are removed
     // pieceacrap
-    fileprivate func loadValues(from ticker: CryptoMarketData) -> [String] {
+    func loadValues(from ticker: CryptoMarketData) -> [String] {
         let price: String = ticker.priceUsd.toDouble() != nil ?
             (String.formatCurrency(value: ticker.priceUsd.toDouble(), fractionDigits: 2) + " $") : "nil"
         

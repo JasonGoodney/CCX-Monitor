@@ -17,7 +17,6 @@ public struct DataManager {
     
     static let defaultsKey = "tickers"
    
-
     public static let coinMarketCapApi = "https://api.coinmarketcap.com/v1/ticker/?limit=10"
     public static let baseCoinMarketCapApi = "https://api.coinmarketcap.com/v1/ticker/"
     
@@ -33,8 +32,7 @@ public struct DataManager {
             }
         }
     }
-    
-    
+        
     public static func loadJSONForGlobalTicker(completionHandler: @escaping (GlobalMarketTicker?, Error?) -> Void){
         
         let endpoint = GlobalMarketTicker.endpoint()

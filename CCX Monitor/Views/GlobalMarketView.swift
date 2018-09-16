@@ -51,8 +51,6 @@ class GlobalMarketView: UIView {
     
     override init(frame: CGRect) {
         super.init(frame: frame)
-        
-        
     }
     
     init(_ totalMarketCapUsd: Double, _ total24hVolumeUsd: Double,

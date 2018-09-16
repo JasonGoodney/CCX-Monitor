@@ -11,6 +11,7 @@ import CryptoMarketDataKit
 
 class AddViewController: CryptoMarketViewController {
     
+    // MARK: - Properties
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
     
     let reuseIdentifier = "cellId"
@@ -31,25 +32,16 @@ class AddViewController: CryptoMarketViewController {
         return view
     }()
     
-    // MARK: - ViewLoad
-    
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
-        setupTableView()
-        setupSearchController()
-        setupNavBar()
+        updateView()
         
         // Used by loadAllData() to filter out user saved cryptocurrencies
         loadDataFromUserDefaults()
         
         loadAllData()
-    }
-    
-    override func viewWillAppear(_ animated: Bool) {
-        super.viewWillAppear(animated)
-        
-        
     }
     
     override func viewDidAppear(_ animated: Bool) {
@@ -62,71 +54,33 @@ class AddViewController: CryptoMarketViewController {
         
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
     // MARK: - Networking
     
     fileprivate func loadAllData() {
         getAllCryptocurrencyData { (error) in
-            if error != nil {
-                print("Error getting all data")
-            } else {
-                DispatchQueue.main.async {
-                    
-                    if error == nil {
-                        
-                        guard let cryptoMarketData = self.cryptoMarketData else { return }
-                        
-                        self.allData = self.allCryptocurrencyData?
-                            .filter { !cryptoMarketData.contains($0) }
-                        // slows doing view load
-                        //.sorted(by: { $0.rank.toDouble()! < $1.rank.toDouble()! })
-                        
-                        
-                    }
-                }
+            if let error = error {
+                print("Error getting all data: \(error) \(error.localizedDescription)")
+                return
+            }
+            
+            DispatchQueue.main.async {
+                guard let cryptoMarketData = self.cryptoMarketData else { return }
+                
+                self.allData = self.allCryptocurrencyData?
+                    .filter { !cryptoMarketData.contains($0) }
+                // slows doing view load
+                //.sorted(by: { $0.rank.toDouble()! < $1.rank.toDouble()! })
+
             }
         }
     }
-    
-    // MARK: - UI
-    
-    fileprivate func setupTableView() {
-        self.view.addSubview(tableView)
-        tableView.frame = self.view.frame
-    }
-    
-    fileprivate func setupSearchController() {
-        searchController.searchResultsUpdater = self
-        searchController.obscuresBackgroundDuringPresentation = false
-        searchController.hidesNavigationBarDuringPresentation = false
-        searchController.definesPresentationContext = true
-        searchController.searchBar.delegate = self
-        searchController.searchBar.showsCancelButton = true
-        searchController.delegate = self
-    }
-    
-    fileprivate func setupNavBar() {
-        
-        titleLabel.text = "Type the cryptocurrencies name or symbol"
-        titleLabel.font = UIFont.systemFont(ofSize: 14)
-        titleLabel.textColor = UIColor.darkerLightGray
-        navigationItem.titleView = titleLabel
-    
-        navigationItem.searchController = searchController
-        navigationItem.hidesSearchBarWhenScrolling = false
-    }
-    
+
     // MARK: - SearchBar
     
     func searchBarIsEmpty() -> Bool {
         return searchController.searchBar.text?.isEmpty ?? true
     }
-    
     
     // MARK: - Filtering
     
@@ -142,7 +96,41 @@ class AddViewController: CryptoMarketViewController {
     func isFiltering() -> Bool {
         return searchController.isActive && !searchBarIsEmpty()
     }
+}
 
+// MARK: - UI
+private extension AddViewController {
+    func updateView() {
+        setupNavBar()
+        setupTableView()
+        setupSearchController()
+    }
+    
+    func setupTableView() {
+        self.view.addSubview(tableView)
+        tableView.frame = self.view.frame
+    }
+    
+    func setupSearchController() {
+        searchController.searchResultsUpdater = self
+        searchController.obscuresBackgroundDuringPresentation = false
+        searchController.hidesNavigationBarDuringPresentation = false
+        searchController.definesPresentationContext = true
+        searchController.searchBar.delegate = self
+        searchController.searchBar.showsCancelButton = true
+        searchController.delegate = self
+    }
+    
+    func setupNavBar() {
+        
+        titleLabel.text = "Type the cryptocurrencies name or symbol"
+        titleLabel.font = UIFont.systemFont(ofSize: 14)
+        titleLabel.textColor = UIColor.darkerLightGray
+        navigationItem.titleView = titleLabel
+        
+        navigationItem.searchController = searchController
+        navigationItem.hidesSearchBarWhenScrolling = false
+    }
 }
 
 // MARK: - UISearchControllerDelegate, UISearchBarDelegate, UISearchResultsUpdating
@@ -164,14 +152,9 @@ extension AddViewController: UISearchControllerDelegate, UISearchBarDelegate, UI
     }
 }
 
-// MARK: - UITableViewDelegate, UITableViewDataSource
+// MARK: - UITableViewDataSource
 
-extension AddViewController: UITableViewDelegate, UITableViewDataSource {
-    
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
-    }
-    
+extension AddViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         if isFiltering() {
             return filteredData.count
@@ -192,14 +175,18 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
             dataItem = filteredData[indexPath.row]
             cell?.textLabel?.text = dataItem.symbol
             cell?.detailTextLabel?.text = dataItem.name
-            
         }
 
         return cell!
     }
     
-    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+}
 
+// MARK: - UITableViewDelegate
+extension AddViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
+        
         let dataItem = filteredData[indexPath.row]
         
         print(dataItem.name)
@@ -214,12 +201,6 @@ extension AddViewController: UITableViewDelegate, UITableViewDataSource {
         NotificationCenter.default.post(name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         self.dismiss(animated: true) {
             
-            
-//            if (self.parent?.isKind(of: ViewController.self))! {
-//                let viewController = ViewController()
-//                viewController.refreshTableView()
-//            }
         }
     }
 }
-

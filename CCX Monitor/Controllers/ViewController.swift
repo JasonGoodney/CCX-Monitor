@@ -26,6 +26,7 @@ enum Refresh: String {
 
 class ViewController: CryptoMarketViewController {
     
+    // MARK: - Properties
     fileprivate lazy var tableView: UITableView = {
         let view = UITableView(frame: CGRect.zero, style: .plain)
         view.dataSource = self
@@ -54,18 +55,18 @@ class ViewController: CryptoMarketViewController {
     var notification: NSObjectProtocol?
     var timer  = Timer()
     
-    
-    
+    // MARK: - Init & Deinit
     deinit {
         NotificationCenter.default.removeObserver(self)
         timer.invalidate()
     }
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
         if !(UserDefaults.standard.bool(forKey: "HasLaunchedOnce")) {
-           
+        
             // This is the first launch ever
             getCryptoMarketData(at: DataManager.coinMarketCapApi) { (error) in
                 if error == nil {
@@ -80,28 +81,19 @@ class ViewController: CryptoMarketViewController {
         
         NotificationCenter.default.addObserver(forName: NSNotification.Name.UIApplicationDidBecomeActive, object: nil, queue: OperationQueue.main) { (notification) in
             self.loadDataFromUserDefaults(completion: {
-                
             })
-            
             self.refreshDataFromUserDefaults()
         }
         
-        setupTableView()
-        setupNavBar()
-        setupForceTouch()
+        updateView()
         
         updateGlobalTickerData {
             self.setupGlobalMarketView()
-            
         }
 
-        
         NotificationCenter.default.addObserver(self, selector: #selector(refreshTableView(notification:)), name: NSNotification.Name(rawValue: Refresh.tableView.rawValue), object: nil)
         
         runDataRefreshTimer()
-        
-        
-        
     }
 
     
@@ -114,7 +106,6 @@ class ViewController: CryptoMarketViewController {
         }
        
         globalMarketView.autoScrollLabel.scrollLabelIfNeeded()
-        
         
         if isLaunch == false {
             
@@ -135,11 +126,9 @@ class ViewController: CryptoMarketViewController {
             
             loadDataFromUserDefaults()
             refreshDataFromUserDefaults()
-        
-            
+    
             isLaunch = !isLaunch
         }
-        
     }
     
     override func viewDidDisappear(_ animated: Bool) {
@@ -177,108 +166,13 @@ class ViewController: CryptoMarketViewController {
             DispatchQueue.main.async {
                 self.tableView.reloadData()
             }
-            
-        }
-        
-    }
-    
-    fileprivate func setupGlobalMarketView(){
-        view.addSubview(globalMarketView)
-        globalMarketView.backgroundColor = .white
-        globalMarketView.delegate = self
-        
-        globalMarketView.snp.makeConstraints { (make) in
-            make.width.equalToSuperview()
-            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
-            make.height.equalTo(44)
-        }
-  }
-
-
-    private func setupNavBar() {
-        
-        dateFormatter.dateFormat = "EEEE\nMMMM d"
-        let dateLabel = FatGrayLabel()
-        dateLabel.numberOfLines = 2
-        dateLabel.text = dateFormatter.string(from: date)
-        
-        let infoButton = UIButton(type: .infoLight)
-        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
-        
-        
-        let dateItem = UIBarButtonItem(customView: dateLabel)
-        let infoItem = UIBarButtonItem(customView: infoButton)
-        
-        self.navigationItem.leftBarButtonItem = dateItem
-        self.navigationItem.rightBarButtonItems = [infoItem]
-
-        navigationItem.title =  "CCX Monitor"
-        navigationController?.view.backgroundColor = UIColor.white
-        if #available(iOS 11.0, *) {
-            navigationController?.navigationBar.prefersLargeTitles = true
-        }
-        
-        
-    }
-
-    fileprivate func setupTableView() {
-        view.addSubview(tableView)
-        tableView.snp.makeConstraints({ (make) in
-            let height = globalMarketView.frame.height
-            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(0, 0, height, 0))
-        })
-        
-    }
-
-    func setupForceTouch() {
-        if traitCollection.forceTouchCapability == .available {
-            registerForPreviewing(with: self, sourceView: view)
-        }
-    }
-
-    @objc func updateDataForTableView() {
-        refreshDataFromUserDefaults()
-        DispatchQueue.main.async {
-            self.tableView.reloadData()
         }
     }
     
-    @objc func addItemHandler(_ sender: UIBarButtonItem) {
-        let add = AddViewController()
-        let nav = UINavigationController(rootViewController: add)
-        present(nav, animated: true)
-    }
-    
-    @objc func removeBanner() {
-        appDelegate.bannerViewState = .removed
-        self.tableView.sectionHeaderHeight = 0.0
-        self.tableView.reloadData()
-    }
-    
-    func addBanner() {
-        self.tableView.sectionHeaderHeight = appDelegate.bannerView.frame.height
-        self.tableView.reloadData()
-    }
-
-
-    @objc func infoButtonTapped(_ sender: UIBarButtonItem) {
-        let infoViewController = InformationViewController()
-        infoViewController.navigationController?.navigationBar.prefersLargeTitles = false
-        let navController = UINavigationController(rootViewController: infoViewController)
-        present(navController, animated: true)
-    }
-    
-    @objc func openSafari(with address: String = "https://coinmarketcap.com", _ sender: Any) {
-        if let url = URL(string: address) {
-            let svc = SFSafariViewController(url: url)
-            present(svc, animated: true, completion: nil)
-        }
-    }
-
     func updateGlobalTickerData(completion: @escaping () -> Void) {
         DataManager.loadJSONForGlobalTicker { (global, error) in
             if let error = error {
-                print(error)
+                print("Error loading json for global ticker \(error)")
                 return
             }
             
@@ -304,18 +198,132 @@ class ViewController: CryptoMarketViewController {
     }
 }
 
-// MARK: - UITableViewDataSource & UITableViewDelegate
-
-extension ViewController: UITableViewDataSource, UITableViewDelegate {
-    func numberOfSections(in tableView: UITableView) -> Int {
-        return 1
+// MARK: - UI
+private extension ViewController {
+    func updateView() {
+        setupTableView()
+        setupNavBar()
+        setupForceTouch()
     }
     
+    func setupGlobalMarketView(){
+        view.addSubview(globalMarketView)
+        globalMarketView.backgroundColor = .white
+        globalMarketView.delegate = self
+        
+        globalMarketView.snp.makeConstraints { (make) in
+            make.width.equalToSuperview()
+            make.bottom.equalTo(view.safeAreaLayoutGuide.snp.bottom)
+            make.height.equalTo(44)
+        }
+    }
+    
+    
+    func setupNavBar() {
+        dateFormatter.dateFormat = "EEEE\nMMMM d"
+        let dateLabel = FatGrayLabel()
+        dateLabel.numberOfLines = 2
+        dateLabel.text = dateFormatter.string(from: date)
+        
+        let infoButton = UIButton(type: .infoLight)
+        infoButton.addTarget(self, action: #selector(infoButtonTapped), for: .touchUpInside)
+        
+        
+        let dateItem = UIBarButtonItem(customView: dateLabel)
+        let infoItem = UIBarButtonItem(customView: infoButton)
+        
+        self.navigationItem.leftBarButtonItem = dateItem
+        self.navigationItem.rightBarButtonItems = [infoItem]
+        
+        navigationItem.title =  "CCX Monitor"
+        navigationController?.view.backgroundColor = UIColor.white
+        if #available(iOS 11.0, *) {
+            navigationController?.navigationBar.prefersLargeTitles = true
+        }
+        
+        
+    }
+    
+    func setupTableView() {
+        view.addSubview(tableView)
+        tableView.snp.makeConstraints({ (make) in
+            let height = globalMarketView.frame.height
+            make.edges.equalToSuperview().inset(UIEdgeInsetsMake(0, 0, height, 0))
+        })
+        
+    }
+    
+    func setupForceTouch() {
+        if traitCollection.forceTouchCapability == .available {
+            registerForPreviewing(with: self, sourceView: view)
+        }
+    }
+}
+
+// MARK: - Actions
+private extension ViewController {
+    @objc func updateDataForTableView() {
+        refreshDataFromUserDefaults()
+        DispatchQueue.main.async {
+            self.tableView.reloadData()
+        }
+    }
+    
+    @objc func addItemHandler(_ sender: UIBarButtonItem) {
+        let add = AddViewController()
+        let nav = UINavigationController(rootViewController: add)
+        present(nav, animated: true)
+    }
+    
+    @objc func removeBanner() {
+        appDelegate.bannerViewState = .removed
+        self.tableView.sectionHeaderHeight = 0.0
+        self.tableView.reloadData()
+    }
+    
+    func addBanner() {
+        self.tableView.sectionHeaderHeight = appDelegate.bannerView.frame.height
+        self.tableView.reloadData()
+    }
+    
+    
+    @objc func infoButtonTapped(_ sender: UIBarButtonItem) {
+        let infoViewController = InformationViewController()
+        infoViewController.navigationController?.navigationBar.prefersLargeTitles = false
+        let navController = UINavigationController(rootViewController: infoViewController)
+        present(navController, animated: true)
+    }
+    
+    @objc func openSafari(with address: String = "https://coinmarketcap.com", _ sender: Any) {
+        if let url = URL(string: address) {
+            let svc = SFSafariViewController(url: url)
+            present(svc, animated: true, completion: nil)
+        }
+    }
+}
+
+// MARK: - UITableViewDataSource
+extension ViewController: UITableViewDataSource {
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         guard let rowCount = self.cryptoMarketData?.count else { return 0 }
         return rowCount
     }
+    
+    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
+        let cell = tableView.dequeueReusableCell(withIdentifier: TickerCell.reuseIdentifier(), for: indexPath) as! TickerCell
+        
+        if let data = cryptoMarketData {
+            let item = data[indexPath.row]
+            cell.configureWithCell(item)
+        }
+       
+        return cell
+    }
+}
 
+// MARK: - UITableViewDelegate
+extension ViewController: UITableViewDelegate {
+    
     func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
         let headerView = UIView()
         headerView.backgroundColor = .white
@@ -336,33 +344,19 @@ extension ViewController: UITableViewDataSource, UITableViewDelegate {
         }
     }
     
-    func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
-        let cell = tableView.dequeueReusableCell(withIdentifier: TickerCell.reuseIdentifier(), for: indexPath) as! TickerCell
-        
-        if let data = cryptoMarketData {
-            let item = data[indexPath.row]
-            cell.configureWithCell(item)
-        }
-       
-        return cell
-    }
-
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let data = self.cryptoMarketData else { return }
         
         let detailViewController = DetailViewController(data: data[indexPath.row])
-
+        
         navigationController?.pushViewController(detailViewController, animated: true)
-
+        
         tableView.deselectRow(at: indexPath, animated: true)
     }
-    
-    
 }
 
 // MARK: EditListDelegate
-
 extension ViewController: EditListDelegate {
     func launchEditList(_ sender: UIButton) {
         sender.pulsate(layer: sender.layer)
@@ -377,6 +371,7 @@ extension ViewController: EditListDelegate {
     }
 }
 
+// MARK: - RefreshDelegate
 extension ViewController: RefreshDelegate {
     func refreshTableView(notification: Notification) {
         self.loadDataFromUserDefaults()

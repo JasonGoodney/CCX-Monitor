@@ -10,6 +10,7 @@ import UIKit
 
 class OpenSourceLibrariesViewController: UIViewController {
     
+    // MARK: - Properties
     fileprivate lazy var tableView: UITableView = {
         let view = UITableView()
         view.delegate = self
@@ -31,6 +32,7 @@ class OpenSourceLibrariesViewController: UIViewController {
         Acknowledgements.License.eFAutoScrollLabel.rawValue
     ]
     
+    // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
         
@@ -40,37 +42,25 @@ class OpenSourceLibrariesViewController: UIViewController {
         tableView.frame = view.frame
         
     }
-
-    override func didReceiveMemoryWarning() {
-        super.didReceiveMemoryWarning()
-        // Dispose of any resources that can be recreated.
-    }
     
 }
 
-extension OpenSourceLibrariesViewController: UITableViewDataSource, UITableViewDelegate {
-
-    // MARK: - Table view data source
+// MARK: - UITableViewDataSource
+extension OpenSourceLibrariesViewController: UITableViewDataSource {
 
     func numberOfSections(in tableView: UITableView) -> Int {
         
         return acknowledgementNames.count
-    }
-    
-    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
-        return acknowledgementNames[section]
     }
 
     func tableView(_ tableView: UITableView, numberOfRowsInSection section: Int) -> Int {
         
         return 1
     }
-
     
     func tableView(_ tableView: UITableView, cellForRowAt indexPath: IndexPath) -> UITableViewCell {
         let cell = tableView.dequeueReusableCell(withIdentifier: reuseIdentifier, for: indexPath)
 
-        // Configure the cell...
         cell.textLabel?.sizeToFit()
         cell.textLabel?.numberOfLines = 0
         cell.textLabel?.text = acknowledgementLicenes[indexPath.section]
@@ -79,4 +69,11 @@ extension OpenSourceLibrariesViewController: UITableViewDataSource, UITableViewD
     }
 }
 
+// MARK: - UITableViewDelegate
+extension OpenSourceLibrariesViewController: UITableViewDelegate {
+    
+    func tableView(_ tableView: UITableView, titleForHeaderInSection section: Int) -> String? {
+        return acknowledgementNames[section]
+    }
+}
 
