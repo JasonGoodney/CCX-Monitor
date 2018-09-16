@@ -8,8 +8,6 @@
 
 import UIKit
 import CryptoMarketDataKit
-import GoogleMobileAds
-
 
 class DetailViewController: UIViewController {
     
@@ -20,7 +18,6 @@ class DetailViewController: UIViewController {
 
     lazy var tableView: UITableView = {
         let view = UITableView(frame: self.view.frame)
-        view.delegate = self
         view.dataSource = self
         view.separatorColor = .clear
         view.allowsSelection = false
@@ -48,11 +45,6 @@ class DetailViewController: UIViewController {
     // MARK: - Lifecycle
     override func viewDidLoad() {
         super.viewDidLoad()
-        
-        if appDelegate.bannerViewState == .present {
-            appDelegate.bannerView.rootViewController = self
-            appDelegate.bannerView.load(GADRequest())
-        }
         
         view.addSubview(tableView)
         
@@ -88,27 +80,6 @@ extension DetailViewController: UITableViewDataSource {
         return cell!
     }
 
-}
-
-// MARK: - UITableViewDelegate
-extension DetailViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .white
-        headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
-        headerView.addSubview(appDelegate.bannerView)
-        return appDelegate.bannerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        
-        switch appDelegate.bannerViewState {
-        case .present:
-            return appDelegate.bannerView.frame.height
-        case .removed:
-            return 0.0
-        }
-    }
 }
 
 private extension DetailViewController {

@@ -10,7 +10,6 @@ import UIKit
 import SnapKit
 import SafariServices
 import CryptoMarketDataKit
-import GoogleMobileAds
 
 @objc protocol RefreshDelegate: class {
     func refreshTableView(notification: Notification)
@@ -50,7 +49,6 @@ class ViewController: CryptoMarketViewController {
     fileprivate let cellId = "Cell"
     fileprivate var globalMarketTicker: GlobalMarketTicker!
     let appDelegate = UIApplication.shared.delegate as! AppDelegate
-    weak var bannerViewStateDelegate: BannerViewStateDelegate?
     var isLaunch = true
     var notification: NSObjectProtocol?
     var timer  = Timer()
@@ -99,12 +97,7 @@ class ViewController: CryptoMarketViewController {
     
     override func viewWillAppear(_ animated: Bool) {
         super.viewWillAppear(animated)
-        
-        if appDelegate.bannerViewState == .present {
-            appDelegate.bannerView.rootViewController = self
-            appDelegate.bannerView.load(GADRequest())
-        }
-       
+
         globalMarketView.autoScrollLabel.scrollLabelIfNeeded()
         
         if isLaunch == false {
@@ -275,17 +268,6 @@ private extension ViewController {
         present(nav, animated: true)
     }
     
-    @objc func removeBanner() {
-        appDelegate.bannerViewState = .removed
-        self.tableView.sectionHeaderHeight = 0.0
-        self.tableView.reloadData()
-    }
-    
-    func addBanner() {
-        self.tableView.sectionHeaderHeight = appDelegate.bannerView.frame.height
-        self.tableView.reloadData()
-    }
-    
     
     @objc func infoButtonTapped(_ sender: UIBarButtonItem) {
         let infoViewController = InformationViewController()
@@ -324,26 +306,6 @@ extension ViewController: UITableViewDataSource {
 // MARK: - UITableViewDelegate
 extension ViewController: UITableViewDelegate {
     
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .white
-        headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
-        headerView.addSubview(appDelegate.bannerView)
-        
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch appDelegate.bannerViewState {
-        case .present:
-            let height = appDelegate.bannerView.frame.height
-            tableView.scrollIndicatorInsets.top = height
-            return height
-        case .removed:
-            return 0.0
-        }
-    }
-    
     func tableView(_ tableView: UITableView, didSelectRowAt indexPath: IndexPath) {
         
         guard let data = self.cryptoMarketData else { return }
@@ -380,17 +342,6 @@ extension ViewController: RefreshDelegate {
         }
     }
 }
-
-extension ViewController: BannerViewStateDelegate {
-    func removeHeaderViewForFailedAdView() {
-        removeBanner()
-    }
-    
-    func addHeaderViewForRecievedAdView() {
-        addBanner()
-    }
-}
-
 
 // MARK: - UIViewControllerPreviewingDelegate
 

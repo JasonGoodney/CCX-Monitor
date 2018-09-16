@@ -8,7 +8,6 @@
 
 import UIKit
 import CryptoMarketDataKit
-import GoogleMobileAds
 
 class EditListViewController: CryptoMarketViewController {
     
@@ -36,11 +35,6 @@ class EditListViewController: CryptoMarketViewController {
     override func viewDidLoad() {
         super.viewDidLoad()
 
-        if appDelegate.bannerViewState == .present {
-            appDelegate.bannerView.rootViewController = self
-            appDelegate.bannerView.load(GADRequest())
-        }
-        
         updateView()
         
         loadDataFromUserDefaults()
@@ -125,22 +119,6 @@ extension EditListViewController: UITableViewDataSource {
 
 // MARK: - UITableViewDelegate
 extension EditListViewController: UITableViewDelegate {
-    func tableView(_ tableView: UITableView, viewForHeaderInSection section: Int) -> UIView? {
-        let headerView = UIView()
-        headerView.backgroundColor = .white
-        headerView.frame.size = CGSize(width: UIScreen.main.bounds.width, height: appDelegate.bannerView.frame.height)
-        headerView.addSubview(appDelegate.bannerView)
-        return headerView
-    }
-    
-    func tableView(_ tableView: UITableView, heightForHeaderInSection section: Int) -> CGFloat {
-        switch appDelegate.bannerViewState {
-        case .present:
-            return appDelegate.bannerView.frame.height
-        default:
-            return 0
-        }
-    }
     
     func tableView(_ tableView: UITableView, commit editingStyle: UITableViewCellEditingStyle, forRowAt indexPath: IndexPath) {
         

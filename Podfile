@@ -4,7 +4,6 @@
 def shared_pods
     pod 'SnapKit'
     pod 'Firebase/Core'
-    pod 'Firebase/AdMob'
 end
 
 target 'CCX Monitor' do

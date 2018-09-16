@@ -26,7 +26,7 @@ open class CryptoMarketViewController: UIViewController {
             }
         }
         if endpoint == "https://api.coinmarketcap.com/v1/ticker/bitcoin/" {
-            print("cryptomarketVC", self.singleCryptocurrencyData?.priceUsd)
+            print("cryptomarketVC", self.singleCryptocurrencyData?.priceUsd ?? "")
         }
         
     }

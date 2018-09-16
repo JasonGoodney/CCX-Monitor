@@ -55,21 +55,6 @@ private extension InformationViewController {
                     self.openSafari(row)
                 })
             
-            +++ Section("For current session")
-            <<< SwitchRow() { row in
-                row.title = "Remove ads"
-                row.value = isBannerViewRemoved
-                }.onChange({ (row) in
-                    if row.value == true {
-                        self.appDelegate.bannerViewState = .removed
-                        self.isBannerViewRemoved = true
-                        UserDefaults.standard.set(self.isBannerViewRemoved, forKey: "bannerViewState")
-                    } else {
-                        self.appDelegate.bannerViewState = .present
-                        self.isBannerViewRemoved = false
-                    }
-                    row.updateCell()
-                })
             +++ Section("Open Source Libraries")
             
             <<< LabelRow() { row in
