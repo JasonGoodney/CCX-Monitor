@@ -19,6 +19,11 @@
 			<key>orderHint</key>
 			<integer>10</integer>
 		</dict>
+		<key>CryptoMarketDataKit.xcscheme_^#shared#^_</key>
+		<dict>
+			<key>orderHint</key>
+			<integer>10</integer>
+		</dict>
 	</dict>
 	<key>SuppressBuildableAutocreation</key>
 	<dict>
